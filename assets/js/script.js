@@ -1,4 +1,4 @@
-cont = 0;
+cont = 1;
 console.log(cont);
 function addBanner(){
     let arquivoBan = document.getElementById('banner').files[0]
@@ -12,6 +12,7 @@ function addHeader(){
 }
 function addEncarte(){
     // Arquivo Upload 
+    if(cont <= 9){
     let arquivoEnc = document.getElementById('encarte').files[0];
     let img = URL.createObjectURL(arquivoEnc);
     //Preço
@@ -29,22 +30,7 @@ function addEncarte(){
         <img src="assets/image/s.png" alt=""><p>${totalP}</p>
         </div>
         </div>
-    </div>`
-    // let divView = document.createElement('div');
-    // divView.id = "view-encarte";
-    // viewEncarte.appendChild(divView);
-    // //Imagem
-    // let View_encarte = document.querySelectorAll('#view-encarte')[cont];
-    // let div_View_encarte = document.createElement('div')
-    // div_View_encarte.id = 'imgdiv';
-    // View_encarte.appendChild(div_View_encarte);
-
-    // let imgView = document.createElement('img');
-    // imgView.src = img
-    // div_View_encarte.appendChild(imgView);
-    console.log(cont);
-
-    
+    </div>`}
     return cont += 1;
 }
 
