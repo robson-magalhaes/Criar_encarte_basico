@@ -26,7 +26,7 @@ function addEncarte(){
         <div id="imgdiv">
         
         <div id="encart-prec">
-        <img src="s.png" alt=""><p>${totalP}</p>
+        <img src="assets/image/s.png" alt=""><p>${totalP}</p>
         </div>
         </div>
     </div>`
