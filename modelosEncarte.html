@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style_model.css">
     <title>Encarte</title>
-    <script>
-        var valor = 0;
-    </script>
 </head>
 <body>
     
@@ -18,7 +15,9 @@
         </div>
 
         <div class="container" id="container">
-            <div id="view-encarte">
+            <div id="view-encarte" class="count-encarte">
+
+                <!--MODELO DO ENCARTE-->
                 <!-- <div id="encarte-main" class="view" >
                     <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="0">+</label>
                         <input type="file" id="file-encarte">
@@ -34,36 +33,10 @@
                 </div> -->
             </div>
 
-            <div id="view-encarte">
-                <!-- <div id="encarte-main" class="view" >
-                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="3">+</label>
-                        <input type="file" id="file-encarte">
-                </div>
-                
-                <div id="encarte-main" class="view">
-                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte" data-id="4">+</label>
-                        <input type="file" id="file-encarte">
-                </div>
-                <div id="encarte-main" class="view">
-                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="5">+</label>
-                        <input type="file" id="file-encarte">
-                </div> -->
+            <div id="view-encarte" class="count-encarte">
             </div>
 
-            <div id="view-encarte">
-                <!-- <div id="encarte-main" class="view" >
-                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="6">+</label>
-                        <input type="file" id="file-encarte">
-                </div>
-                
-                <div id="encarte-main" class="view">
-                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte" data-id="7">+</label>
-                        <input type="file" id="file-encarte">
-                </div>
-                <div id="encarte-main" class="view">
-                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="8">+</label>
-                        <input type="file" id="file-encarte">
-                </div> -->
+            <div id="view-encarte" class="count-encarte">
             </div>
             
         </div>
@@ -74,16 +47,17 @@
         </div>
         
     </main>
+    
     <div class="addBox">
-            <div class="add" onclick="addBox(event)" data-id="0">+</div>
-            <div class="add" onclick="addBox(event)" data-id="1">+</div>
-            <div class="add" onclick="addBox(event)" data-id="2">+</div>
-        </div>
-        <div class="removeBox">
-            <div class="remove" onclick="removeBox(event)" data-id="0">X</div>
-            <div class="remove" onclick="removeBox(event)" data-id="1">X</div>
-            <div class="remove" onclick="removeBox(event)" data-id="2">X</div>
-        </div>
+        <div class="add" onclick="addBox(event)" data-id="0">+</div>
+        <div class="add" onclick="addBox(event)" data-id="1">+</div>
+        <div class="add" onclick="addBox(event)" data-id="2">+</div>
+    </div>
+    <div class="removeBox">
+        <div class="remove" onclick="removeBox(event)" data-id="0">X</div>
+        <div class="remove" onclick="removeBox(event)" data-id="1">X</div>
+        <div class="remove" onclick="removeBox(event)" data-id="2">X</div>
+    </div>
     <script src="assets/js/script_model.js"></script>
 </body>
 </html>
