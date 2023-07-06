@@ -72,5 +72,5 @@ document.getElementById('file-footer').addEventListener('change', function addFo
     let view = document.getElementById('footer-main');
     var img = URL.createObjectURL(file);
     view.style.backgroundImage = `url(${img})`;
-    document.getElementById('display-footer').style.display='none';
+    document.querySelector('.display-footer').style.display='none';
 });
