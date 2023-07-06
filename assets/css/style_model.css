@@ -13,9 +13,11 @@ main{
     background-size: cover;
     margin: 10px;
     max-width: 700px;
+    min-width: 600px;
     min-height: 800px;
     background-color: blue;
     min-height: 900px;
+    /* position: absolute; */
 }
 input[type='file']{
     display:none;
@@ -128,31 +130,31 @@ button:hover{
     background-color: rgb(120, 95, 48);
 }
 .add{
+    display: inline-block;
+    transform: translateX(-400px) translateY(-650px);
     display: flex;
     align-items: center;
     justify-content: center;
-    position:absolute;
     width: 50px;
     height: 50px;
     border-radius: 3px;
     background-color: green;
-    top: 18.5rem;
-    left: 23.8rem;
     font-size: 50px;
+    margin-bottom: 155px;
     cursor: pointer;
 }
 .remove{
     display: flex;
+    flex-direction: column;
+    transform: translateX(400px) translateY(-78.7rem);
     align-items: center;
     justify-content: center;
-    position:absolute;
+    padding: 10px;
     width: 50px;
     height: 50px;
     border-radius: 3px;
     background-color: red;
-    top: 18.5rem;
-    right: 2rem;
-    margin: 0px 350px 0px -300px;
     font-size: 50px;
+    margin-bottom: 155px;
     cursor: pointer;
 }
