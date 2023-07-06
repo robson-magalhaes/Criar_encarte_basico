@@ -35,7 +35,7 @@ document.getElementById('file-encarte').addEventListener('change', addEncarte);
 
 
 
-var valor = '';
+
 
 function addBox(event){
     let count =0;
