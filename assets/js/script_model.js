@@ -58,7 +58,7 @@ function addBox(event){
 function removeBox(event){
     let pos = event.target.dataset.id;
     console.log(pos);
-    let del = document.querySelectorAll('.view')[0];
+    let del = document.querySelectorAll('.view')[pos];
     del.remove();
 }
 
