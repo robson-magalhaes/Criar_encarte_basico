@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style_model.css">
+    <title>Encarte</title>
+</head>
+<body>
+    <main>
+        <div id="header-main">
+            <label for="file-header" onclick="addHeader()" id="display-header">+</label>
+                <input type="file" id="file-header">
+        </div>
+
+        <div class="container">
+
+            <div id="view-encarte">
+                <div class="add" onclick="addBox()">+</div>
+                <div id="encarte-main" class="view" >
+                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="0">+</label>
+                        <input type="file" id="file-encarte">
+                </div>
+                
+                <div id="encarte-main" class="view">
+                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte" data-id="1">+</label>
+                        <input type="file" id="file-encarte">
+                </div>
+                <div id="encarte-main" class="view">
+                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="2">+</label>
+                        <input type="file" id="file-encarte">
+                </div>
+                <div class="remove">X</div>
+            </div>
+
+            <div id="view-encarte">
+                <div class="add" onclick="addBox()">+</div>
+                <div id="encarte-main" class="view" >
+                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="3">+</label>
+                        <input type="file" id="file-encarte">
+                </div>
+                
+                <div id="encarte-main" class="view">
+                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte" data-id="4">+</label>
+                        <input type="file" id="file-encarte">
+                </div>
+                <div id="encarte-main" class="view">
+                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="5">+</label>
+                        <input type="file" id="file-encarte">
+                </div>
+                <div class="remove">X</div>
+            </div>
+
+            <div id="view-encarte">
+                <div class="add" onclick="addBox()">+</div>
+                <div id="encarte-main" class="view" >
+                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="6">+</label>
+                        <input type="file" id="file-encarte">
+                </div>
+                
+                <div id="encarte-main" class="view">
+                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte" data-id="7">+</label>
+                        <input type="file" id="file-encarte">
+                </div>
+                <div id="encarte-main" class="view">
+                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="8">+</label>
+                        <input type="file" id="file-encarte">
+                </div>
+                <div class="remove">X</div>
+            </div>
+            
+        </div>
+
+        <div id="footer-main">
+            <label for="file-footer" onclick="addFooter()" id="display-footer">+</label>
+                <input type="file" id="file-footer">
+        </div>
+    </main>
+    <script src="assets/js/script_model.js"></script>
+</body>
+</html>
