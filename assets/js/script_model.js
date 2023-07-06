@@ -42,6 +42,7 @@ function removeBox(event){
     let linha = document.querySelectorAll('.count-encarte')[pos];
     let del = linha.querySelectorAll('.view')[0];
     del.remove();
+    return count-=1;
 }
 
 //ADICIONAR IMAGEM DO ENCARTE
@@ -55,9 +56,19 @@ function addEncarte(event){
     // let view = document.getElementById('encarte-main');
     let img = URL.createObjectURL(file);
     let view = document.querySelectorAll('.view')[pos];
-    // let viewId = view.querySelectorAll('#encarte-main')[pos];
+    console.log(view);
     view.style.backgroundImage = `url(${img})`;
     document.querySelectorAll('.display-encarte')[pos].style.display='none';
+
+    // view = `<div id="encarte-main" class="view" style="background-image: url('${img}')" >
+    //                     <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="0">+</label>
+    //                         <input type="file" id="file-encarte">
+    //                 </div>`
+
+
+    // let viewId = view.querySelectorAll('#encarte-main')[pos];
+    // view.style.backgroundImage = `url(${img})`;
+    // document.querySelectorAll('.display-encarte')[pos].style.display='none';
 }
 //);
 
