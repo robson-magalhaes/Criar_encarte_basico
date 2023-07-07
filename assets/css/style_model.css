@@ -12,10 +12,10 @@ main{
     background-position: center;
     background-size: cover;
     margin: 10px;
-    max-width: 700px;
+    max-width: 780px;
     min-width: 600px;
     min-height: 800px;
-    background-color: blue;
+    background-color: white;
     min-height: 900px;
     /* position: absolute; */
 }
@@ -27,7 +27,7 @@ input[type='file']{
 }
 #header-main{
     height: 200px;
-    background-color: red;
+    background-color: rgba(16, 16, 16, 0.219);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -35,6 +35,8 @@ input[type='file']{
     padding:5px;
     background-size: cover;
     background-position: center;
+    margin: 3px;
+    border-radius: 8px;
 }
 #header-main>label{
     display: flex;
@@ -51,7 +53,7 @@ input[type='file']{
 }
 .container{
     min-height: 600px;
-    max-height: 800px;
+    max-height: auto;
 }
 #view-encarte{
     display: flex;
@@ -61,7 +63,7 @@ input[type='file']{
 #encarte-main{
     flex: 1;
     min-width: 200px;
-    background-color: red;
+    background-color: rgba(16, 16, 16, 0.219);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -69,23 +71,32 @@ input[type='file']{
     padding:5px;
     background-size: cover;
     background-position: center;
+    min-height: 200px;
+    margin: 3px;
+    border-radius: 8px;
 }
 #encarte-main>label{
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: black;
+    color: white;
     font-size: 100px;
     height: 100%;
     width: 100%;
     border-radius: 10px;
     background-color: yellow;
     cursor: pointer;
+    box-shadow: 1px 1px 2px 1px black;
+    transition: 0.2s;
+}
+#encarte-main>label:hover{
+    transition: 0.2s;
+    background-color: rgb(53, 53, 51);
 }
 #footer-main{
     height: 100px;
-    background-color: red;
+    background-color: rgba(16, 16, 16, 0.219);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -93,6 +104,8 @@ input[type='file']{
     padding:5px;
     background-size: cover;
     background-position: center;
+    margin: 3px;
+    border-radius: 8px;
 }
 #footer-main>label{
     display: flex;
@@ -131,7 +144,7 @@ button:hover{
 }
 .add{
     display: inline-block;
-    transform: translateX(-400px) translateY(-650px);
+    transform: translateX(-450px) translateY(-650px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,7 +159,7 @@ button:hover{
 .remove{
     display: flex;
     flex-direction: column;
-    transform: translateX(400px) translateY(-78.7rem);
+    transform: translateX(450px) translateY(-78.7rem);
     align-items: center;
     justify-content: center;
     padding: 10px;
