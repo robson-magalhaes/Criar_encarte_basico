@@ -14,103 +14,122 @@ document.getElementById('file-footer').addEventListener('change', function addFo
     view.style.backgroundImage = `url(${img})`;
     document.getElementById('display-footer').style.display='none';
 });
+
 //ADICIONAR BOX DE ENCARTE EM LINHA
-let countl1 = -1;
-function addBox1(event){
-    countl1+=1;
-    let valor1 = parseFloat(countl1);
-    console.log('Contagem: '+valor1);
-
+let count = {'linha1':-1, 'linha2': -1,'linha3':-1};
+// console.log(count);
+function addBox(event){
     let pos = event.target.dataset.id;
-    console.log('MOSTRA POSIÇÃO: '+pos);
-    let container = document.querySelectorAll('#view-encarte')[pos];
-    container.innerHTML +=
-    `<div id="encarte-main"  class="view" >
-        <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${valor1}">+</label>
-            <input type="file" id="file-encarte">`;
-    valor1+=1;
-    return valor1;
+    if(pos == 0){
+        count["linha1"] += 1;
+        console.log(count);
+        // console.log('MOSTRA POSIÇÃO: '+pos);
+        let container = document.querySelectorAll('#view-encarte')[pos];
+        container.innerHTML +=
+        `<div id="encarte-main"  class="view" data-item1=${count['linha1']} data-id="${pos}">
+            <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${pos}" data-item1=${count['linha1']}>+</label>
+                <input type="file" id="file-encarte">`;
+        return
+    }
+    if(pos == 1){
+        count["linha2"] += 1;
+        console.log(count);
+        let container = document.querySelectorAll('#view-encarte')[pos];
+        container.innerHTML +=
+        `<div id="encarte-main"  class="view" data-item2=${count['linha2']} data-id="${pos}">
+            <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${pos}" data-item2=${count['linha2']}>+</label>
+                <input type="file" id="file-encarte">`;
+        return
+    }
+    if(pos == 2){
+        count["linha3"] += 1;
+        console.log(count);
+        let container = document.querySelectorAll('#view-encarte')[pos];
+        container.innerHTML +=
+        `<div id="encarte-main"  class="view" data-item3=${count['linha3']} data-id="${pos}">
+            <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${pos}" data-item3=${count['linha3']}>+</label>
+                <input type="file" id="file-encarte">`;
+        return
+    }
 }
-let countl2 = -1;
-function addBox2(event){
-    countl2+=1;
-    let valor2 = parseFloat(countl2);
-    console.log('Contagem: '+valor2);
 
-    let pos = event.target.dataset.id;
-    console.log('MOSTRA POSIÇÃO: '+pos);
-    let container = document.querySelectorAll('#view-encarte')[pos];
-    container.innerHTML +=
-    `<div id="encarte-main"  class="view" >
-        <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${valor2}">+</label>
-            <input type="file" id="file-encarte">`;
-    valor2+=1;
-    return valor2;
-}
-let countl3 = -1;
-function addBox3(event){
-    countl3+=1;
-    let valor3 = parseFloat(countl3);
-    console.log('Contagem: '+valor3);
-
-    let pos = event.target.dataset.id;
-    console.log('MOSTRA POSIÇÃO: '+pos);
-    let container = document.querySelectorAll('#view-encarte')[pos];
-    container.innerHTML +=
-    `<div id="encarte-main"  class="view" >
-        <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${valor3}">+</label>
-            <input type="file" id="file-encarte">`;
-    valor3+=1;
-    return valor3;
-}
 //REMOVER BOX DE ENCARTE EM LINHA
 function removeBox(event){
+    let a = event.target;
+    console.log(a);
     let pos = event.target.dataset.id;
     console.log('MOSTRA POSIÇÃO: '+pos);
     let linha = document.querySelectorAll('.count-encarte')[pos];
     let del = linha.querySelectorAll('.view')[0];
     del.remove();
-    return count-=1;
+    if(pos == 0){
+        count["linha1"] -= 1;
+    }
+    if(pos == 1){
+        count["linha2"] -= 1;
+    }
+    if(pos == 2){
+        count["linha1"] -= 1;
+    }
+    return
 }
 
 //ADICIONAR IMAGEM DO ENCARTE
 
 // document.getElementById('file-encarte').addEventListener('change', 
 function addEncarte(event){
+    console.log(event.target);
     let pos = event.target.dataset.id;
-    // let cs = pos.previousElementSibling;
-    // console.log(cs);
-    let file = document.getElementById('file-encarte').files[0];
-    // let view = document.getElementById('encarte-main');
-    let img = URL.createObjectURL(file);
-    let view = document.querySelectorAll('.view')[pos];
-    console.log(view);
-    view.style.backgroundImage = `url(${img})`;
-    document.querySelectorAll('.display-encarte')[pos].style.display='none';
-
-    // view = `<div id="encarte-main" class="view" style="background-image: url('${img}')" >
-    //                     <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="0">+</label>
-    //                         <input type="file" id="file-encarte">
-    //                 </div>`
-
-
-    // let viewId = view.querySelectorAll('#encarte-main')[pos];
+    let item1 = event.target.dataset.item1;
+    let item2 = event.target.dataset.item2;
+    let item3 = event.target.dataset.item3;
+    console.log('item: '+item1);
+    console.log('Posição: '+pos);
+    if(pos == 0){
+        let file = document.getElementById('file-encarte').files[0];
+        let img = URL.createObjectURL(file);
+        // console.log(img);
+        // let view = document.querySelectorAll('.view')[item1];
+        let view = document.querySelectorAll('div[data-id="0"]')[item1];
+        // let view = document.querySelectorAll('div[data-item1="'+item+'"]')[item1];
+        console.log(view);
+        view.style.backgroundImage = `url(${img})`;
+        document.querySelectorAll('label[data-id="0"]')[item1].style.display='none';
+        return
+    }
+    if(pos == 1){
+        let file = document.getElementById('file-encarte').files[0];
+        let img = URL.createObjectURL(file);
+        // console.log(img);
+        // let view = document.querySelectorAll('.view')[item2];
+        let view = document.querySelectorAll('div[data-id="1"]')[item2];
+        // let view = document.querySelectorAll('div[data-item1="'+item+'"]')[item2];
+        console.log(view);
+        view.style.backgroundImage = `url(${img})`;
+        document.querySelectorAll('label[data-id="1"]')[item2].style.display='none';
+        return
+    }
+    if(pos == 2){
+        let file = document.getElementById('file-encarte').files[0];
+        let img = URL.createObjectURL(file);
+        // console.log(img);
+        // let view = document.querySelectorAll('.view')[item3];
+        let view = document.querySelectorAll('div[data-id="2"]')[item3];
+        // let view = document.querySelectorAll('div[data-item1="'+item+'"]')[item3];
+        console.log(view);
+        view.style.backgroundImage = `url(${img})`;
+        document.querySelectorAll('label[data-id="2"]')[item3].style.display='none';
+        return
+    }
+    // console.log('Posição pra adicionar imagem: '+pos);
+    // let file = document.getElementById('file-encarte').files[0];
+    // let img = URL.createObjectURL(file);
+    // let view = document.querySelectorAll('.view-encarte')[pos];
+    // console.log(view);
+    // view.innerHTML += `<div id="encarte-main"  class="view" >
+    // <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${count}">+</label>
+    //     <input type="file" id="file-encarte">`;
     // view.style.backgroundImage = `url(${img})`;
-    // document.querySelectorAll('.display-encarte')[pos].style.display='none';
+    // document.querySelectorAll('.display-encarte')[count].style.display='none';
 }
 //);
-
-document.addEventListener('DOMContentLoaded', addEncarte);
-
-// function addEncarte(event){
-//     let pos = event.target.dataset.id;
-//     // let cs = pos.previousElementSibling;
-//     // console.log(cs);
-//     let file = document.getElementById('file-encarte').files[0];
-//     // let view = document.getElementById('encarte-main');
-//     let img = URL.createObjectURL(file);
-//     let view = document.querySelectorAll('.view')[pos];
-//     // let viewId = view.querySelectorAll('#encarte-main')[pos];
-//     view.style.backgroundImage = `url(${img})`;
-//     document.querySelectorAll('.display-encarte')[pos].style.display='none';
-// }
