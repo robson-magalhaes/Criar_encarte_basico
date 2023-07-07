@@ -51,7 +51,7 @@ function addBox(event){
                 <input type="file" id="file-encarte">`;
         return
     }
-}
+};
 
 //REMOVER BOX DE ENCARTE EM LINHA
 function removeBox(event){
@@ -72,11 +72,10 @@ function removeBox(event){
         count["linha1"] -= 1;
     }
     return
-}
+};
 
 //ADICIONAR IMAGEM DO ENCARTE
 
-// document.getElementById('file-encarte').addEventListener('change', 
 function addEncarte(event){
     console.log(event.target);
     let pos = event.target.dataset.id;
@@ -121,15 +120,4 @@ function addEncarte(event){
         document.querySelectorAll('label[data-id="2"]')[item3].style.display='none';
         return
     }
-    // console.log('Posição pra adicionar imagem: '+pos);
-    // let file = document.getElementById('file-encarte').files[0];
-    // let img = URL.createObjectURL(file);
-    // let view = document.querySelectorAll('.view-encarte')[pos];
-    // console.log(view);
-    // view.innerHTML += `<div id="encarte-main"  class="view" >
-    // <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${count}">+</label>
-    //     <input type="file" id="file-encarte">`;
-    // view.style.backgroundImage = `url(${img})`;
-    // document.querySelectorAll('.display-encarte')[count].style.display='none';
-}
-//);
+};
