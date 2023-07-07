@@ -15,53 +15,25 @@ document.getElementById('file-footer').addEventListener('change', function addFo
     document.getElementById('display-footer').style.display='none';
 });
 //ADICIONAR BOX DE ENCARTE EM LINHA
-let countl1 = -1;
-function addBox1(event){
-    countl1+=1;
-    let valor1 = parseFloat(countl1);
-    console.log('Contagem: '+valor1);
+let count = -1;
+function addBox(event){
+    count+=1;
+    let valor = parseFloat(count);
+    console.log('Contagem: '+valor);
 
     let pos = event.target.dataset.id;
     console.log('MOSTRA POSIÇÃO: '+pos);
     let container = document.querySelectorAll('#view-encarte')[pos];
     container.innerHTML +=
     `<div id="encarte-main"  class="view" >
-        <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${valor1}">+</label>
+        <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${valor}">+</label>
             <input type="file" id="file-encarte">`;
-    valor1+=1;
-    return valor1;
-}
-let countl2 = -1;
-function addBox2(event){
-    countl2+=1;
-    let valor2 = parseFloat(countl2);
-    console.log('Contagem: '+valor2);
-
-    let pos = event.target.dataset.id;
-    console.log('MOSTRA POSIÇÃO: '+pos);
-    let container = document.querySelectorAll('#view-encarte')[pos];
-    container.innerHTML +=
-    `<div id="encarte-main"  class="view" >
-        <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${valor2}">+</label>
-            <input type="file" id="file-encarte">`;
-    valor2+=1;
-    return valor2;
-}
-let countl3 = -1;
-function addBox3(event){
-    countl3+=1;
-    let valor3 = parseFloat(countl3);
-    console.log('Contagem: '+valor3);
-
-    let pos = event.target.dataset.id;
-    console.log('MOSTRA POSIÇÃO: '+pos);
-    let container = document.querySelectorAll('#view-encarte')[pos];
-    container.innerHTML +=
-    `<div id="encarte-main"  class="view" >
-        <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${valor3}">+</label>
-            <input type="file" id="file-encarte">`;
-    valor3+=1;
-    return valor3;
+    // `<div id="k1"><div id="encarte-main" class="view" >
+    //     <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${valor}">+</label>
+    //         <input type="file" id="file-encarte">
+    // </div>`;
+    valor+=1;
+    return valor;
 }
 //REMOVER BOX DE ENCARTE EM LINHA
 function removeBox(event){
