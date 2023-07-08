@@ -1,4 +1,4 @@
-//ADD O EVENTO DE ADICIONAR O HEADER
+//ADICIONAR O HEADER
 document.getElementById('file-header').addEventListener('change', function addHeader(){
     let file = document.getElementById('file-header').files[0];
     let view = document.getElementById('header-main');
@@ -6,7 +6,7 @@ document.getElementById('file-header').addEventListener('change', function addHe
     view.style.backgroundImage = `url(${img})`;
     document.getElementById('display-header').style.display='none';
 });
-
+//ADICIONAR O FOOTER
 document.getElementById('file-footer').addEventListener('change', function addFooter(){
     let file = document.getElementById('file-footer').files[0];
     let view = document.getElementById('footer-main');
@@ -75,7 +75,6 @@ function removeBox(event){
 };
 
 //ADICIONAR IMAGEM DO ENCARTE
-
 function addEncarte(event){
     console.log(event.target);
     let pos = event.target.dataset.id;
