@@ -133,7 +133,7 @@ function abrirAjuste(event){
     let view = document.getElementById('ajusteEncarte');
     view.style.display = 'block';
     let v = document.getElementById('ajusteEncarte');
-    v.innerHTML = `<h4>Tela de ajustes de encarte</h4>
+    v.innerHTML = `<h4>Tela de ajustes de encarte test1</h4>
     <label for="file-encarte">upload</label>
     <input type="file" id="file-encarte">
     <input type="number" id="valor">
