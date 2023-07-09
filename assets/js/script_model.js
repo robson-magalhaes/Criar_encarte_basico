@@ -27,9 +27,7 @@ function addBox(event){
         let container = document.querySelectorAll('#view-encarte')[pos];
         container.innerHTML +=
         `<div id="encarte-main"  class="view" data-item1=${count['linha1']} data-id="${pos}">
-            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item1=${count['linha1']}>+</label>
-                `;
-        return
+            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item1=${count['linha1']}>+</label></div>`;
     }
     if(pos == 1){
         count["linha2"] += 1;
@@ -37,8 +35,7 @@ function addBox(event){
         let container = document.querySelectorAll('#view-encarte')[pos];
         container.innerHTML +=
         `<div id="encarte-main"  class="view" data-item2=${count['linha2']} data-id="${pos}">
-            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item2=${count['linha2']}>+</label>`;
-        return
+            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item2=${count['linha2']}>+</label></div>`;
     }
     if(pos == 2){
         count["linha3"] += 1;
@@ -46,7 +43,7 @@ function addBox(event){
         let container = document.querySelectorAll('#view-encarte')[pos];
         container.innerHTML +=
         `<div id="encarte-main"  class="view" data-item3=${count['linha3']} data-id="${pos}">
-            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item3=${count['linha3']}>+</label>`;
+            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item3=${count['linha3']}>+</label></div>`;
         return
     }
 };
@@ -87,23 +84,19 @@ function addEncarte(event){
     if(pos == 0){
         let file = document.getElementById('file-encarte').files[0];
         let img = URL.createObjectURL(file);
-        // console.log(img);
-        // let view = document.querySelectorAll('.view')[item1];
         let view = document.querySelectorAll('div[data-id="0"]')[item1];
-        // let view = document.querySelectorAll('div[data-item1="'+item+'"]')[item1];
-        console.log(view);
-        view.style.backgroundImage = `url(${img})`;
+        console.log('valor da view: '+view);
+        // view.style.backgroundImage = `url(${img})`;
+        view.innerHTML = `<div id="encarte-main"  class="view" style="background-image: url("${img}");">
+        </div>`;
         document.querySelectorAll('label[data-id="0"]')[item1].style.display='none';
         return
     }
     if(pos == 1){
         let file = document.getElementById('file-encarte').files[0];
         let img = URL.createObjectURL(file);
-        // console.log(img);
-        // let view = document.querySelectorAll('.view')[item2];
         let view = document.querySelectorAll('div[data-id="1"]')[item2];
-        // let view = document.querySelectorAll('div[data-item1="'+item+'"]')[item2];
-        console.log(view);
+        console.log('valor da view: '+view);
         view.style.backgroundImage = `url(${img})`;
         document.querySelectorAll('label[data-id="1"]')[item2].style.display='none';
         return
@@ -111,11 +104,8 @@ function addEncarte(event){
     if(pos == 2){
         let file = document.getElementById('file-encarte').files[0];
         let img = URL.createObjectURL(file);
-        // console.log(img);
-        // let view = document.querySelectorAll('.view')[item3];
         let view = document.querySelectorAll('div[data-id="2"]')[item3];
-        // let view = document.querySelectorAll('div[data-item1="'+item+'"]')[item3];
-        console.log(view);
+        console.log('valor da view: '+view);
         view.style.backgroundImage = `url(${img})`;
         document.querySelectorAll('label[data-id="2"]')[item3].style.display='none';
         return
@@ -124,31 +114,31 @@ function addEncarte(event){
 
 function abrirAjuste(event){
     console.log(event.target);
-    let a = event.target.dataset.id;
+    let item = '';
+    let a = parseInt(event.target.dataset.id);
     if(event.target.dataset.item1){
         console.log('if 1');
-        return item = event.target.dataset.item1;
+        item = parseInt(event.target.dataset.item1);
     }
     if(event.target.dataset.item2){
         console.log('if 2');
-        let item = event.target.dataset.item2;
-        return item;
+        item = parseInt(event.target.dataset.item2);
     }
     if(event.target.dataset.item3){
         console.log('if 3');
-        let item = event.target.dataset.item3;
-        return item;
+        item = parseInt(event.target.dataset.item3);
     }
-    // let item = event.target.dataset.item1;
-    console.log(a);
-    console.log(item);
+    console.log('Veio até aqui');
+    console.log('item: '+typeof(item));
+    console.log('posição: '+a);
     let view = document.getElementById('ajusteEncarte');
     view.style.display = 'block';
-    let v = document.getElementById('ajusteEncarte');
-    v.innerHTML = `<h4>Tela de ajustes de encarte test1</h4>
+    view.innerHTML = `<h4>Tela de ajustes de encarte</h4>
     <label for="file-encarte">upload</label>
-    <input type="file" id="file-encarte">
-    <input type="number" id="valor">
-    <button onclick="addEncarte(event)" id="btn-enc" data-id="${a}" data-item1="${item}">ENVIAR</button>`;
+    <input type="file" id="file-encarte" display="block"><br><hr>
+    Preço:
+    <input type="number" id="valor"><br>
+    <img src="" alt="Sem imagem por enquanto"/><br>
+    <button onclick="addEncarte(event)" id="btn-enc" data-id="${a}" data-item${a+1}="${item}">ENVIAR</button>`;
     return
 }

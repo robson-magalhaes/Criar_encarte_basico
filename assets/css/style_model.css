@@ -201,7 +201,9 @@ button:hover{
 }
 
 input#valor{
-    
+    height: 30px;
+    width: 50px;
+    background-color: green;
 }
 #ajusteEncarte{
     display: none;
