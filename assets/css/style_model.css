@@ -199,3 +199,20 @@ button:hover{
     transition: 3s;
     background-image: linear-gradient(to top right,rgb(203, 93, 93), rgb(122, 27, 27));
 }
+
+input#valor{
+    
+}
+#ajusteEncarte{
+    display: none;
+    position: absolute;
+    background-color: red;
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 9;
+    float: 10px;
+    transform: translateX(0px) translateY(250px);
+}
