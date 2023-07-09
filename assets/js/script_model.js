@@ -37,8 +37,7 @@ function addBox(event){
         let container = document.querySelectorAll('#view-encarte')[pos];
         container.innerHTML +=
         `<div id="encarte-main"  class="view" data-item2=${count['linha2']} data-id="${pos}">
-            <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${pos}" data-item2=${count['linha2']}>+</label>
-                <input type="file" id="file-encarte">`;
+            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item2=${count['linha2']}>+</label>`;
         return
     }
     if(pos == 2){
@@ -47,8 +46,7 @@ function addBox(event){
         let container = document.querySelectorAll('#view-encarte')[pos];
         container.innerHTML +=
         `<div id="encarte-main"  class="view" data-item3=${count['linha3']} data-id="${pos}">
-            <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="${pos}" data-item3=${count['linha3']}>+</label>
-                <input type="file" id="file-encarte">`;
+            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item3=${count['linha3']}>+</label>`;
         return
     }
 };
@@ -127,9 +125,23 @@ function addEncarte(event){
 function abrirAjuste(event){
     console.log(event.target);
     let a = event.target.dataset.id;
-    let b = event.target.dataset.item1;
+    if(event.target.dataset.item1){
+        console.log('if 1');
+        return item = event.target.dataset.item1;
+    }
+    if(event.target.dataset.item2){
+        console.log('if 2');
+        let item = event.target.dataset.item2;
+        return item;
+    }
+    if(event.target.dataset.item3){
+        console.log('if 3');
+        let item = event.target.dataset.item3;
+        return item;
+    }
+    // let item = event.target.dataset.item1;
     console.log(a);
-    console.log(b);
+    console.log(item);
     let view = document.getElementById('ajusteEncarte');
     view.style.display = 'block';
     let v = document.getElementById('ajusteEncarte');
@@ -137,6 +149,6 @@ function abrirAjuste(event){
     <label for="file-encarte">upload</label>
     <input type="file" id="file-encarte">
     <input type="number" id="valor">
-    <button onclick="addEncarte(event)" id="btn-enc" data-id="${a}" data-item1="${b}">ENVIAR</button>`;
+    <button onclick="addEncarte(event)" id="btn-enc" data-id="${a}" data-item1="${item}">ENVIAR</button>`;
     return
 }
