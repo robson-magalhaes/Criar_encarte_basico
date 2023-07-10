@@ -369,7 +369,7 @@ input#valor{
     }
     #ajusteEncarte{
         z-index: 999;
-        transform: scale(3);
+        transform: scale(3) translateX(0px) translateY(200px);
     }
     .addBox{
         transform: translateX(0px) translateY(250px);
@@ -383,7 +383,7 @@ input#valor{
         border-radius: 100%;
     }
     #ajusteCor{
-        transform: translateX(0px) translateY(1500px);
+        transform: translateX(0px) translateY(1650px);
         position: fixed;
         z-index: 77;
         display: flex;
