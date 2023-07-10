@@ -350,7 +350,12 @@ input#valor{
 
 @media(max-width:600px) {
     html{
-        max-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* max-height: 100vh; */
+        margin: 0;
+        padding: 0;
     }
     body{
         height: 100%;
@@ -360,16 +365,17 @@ input#valor{
         position: fixed;
         z-index: 77;
         height: auto;
-        transform: translateX(0px) translateY(200px);
+        transform: translateX(0px) translateY(250px);
     }
     #ajusteEncarte{
+        z-index: 999;
         transform: scale(3);
     }
     .addBox{
-        transform: translateX(0px) translateY(200px);
+        transform: translateX(0px) translateY(250px);
     }
     .removeBox{
-        transform: translateX(0px) translateY(200px);
+        transform: translateX(0px) translateY(250px);
     }
     input[type="color"]{
         width: 100px;
