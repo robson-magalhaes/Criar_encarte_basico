@@ -7,13 +7,23 @@ document.getElementById('file-header').addEventListener('change', function addHe
     document.getElementById('display-header').style.display='none';
 });
 //ADICIONAR O FOOTER
-document.getElementById('file-footer').addEventListener('change', function addFooter(){
-    let file = document.getElementById('file-footer').files[0];
-    let view = document.getElementById('footer-main');
-    var img = URL.createObjectURL(file);
-    view.style.backgroundImage = `url(${img})`;
-    document.getElementById('display-footer').style.display='none';
-});
+// document.getElementById('file-footer').addEventListener('change', function addFooter(){
+//     let file = document.getElementById('file-footer').files[0];
+//     let view = document.getElementById('footer-main');
+//     var img = URL.createObjectURL(file);
+//     view.style.backgroundImage = `url(${img})`;
+//     document.getElementById('display-footer').style.display='none';
+// });
+function ajusteCor(){
+    // let origin = document.getElementById('footer-main');
+    let area = document.getElementById('footerArea');
+    let corBg = document.getElementById('corBgFooter').value;
+    console.log('A cor é: '+corBg);
+    let corLet = document.getElementById('corLetFooter').value;
+    area.style.backgroundColor = `${corBg}`;
+    area.style.color = corLet;
+    // origin.innerHTML = area.value;
+}
 
 //ADICIONAR BOX DE ENCARTE EM LINHA
 let count = {'linha1':0, 'linha2': 0,'linha3':0};

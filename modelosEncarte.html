@@ -81,11 +81,23 @@
         </div>
 
         <div id="footer-main">
-            <label for="file-footer" onclick="addFooter()" id="display-footer">+</label>
-                <input type="file" id="file-footer" style="display:none">
+            <textarea name="" id="footerArea" cols="30" rows="10"></textarea>
+            
+            <div class="addFooter" onclick="ajusteCor()">Enviar</div>
+                <!-- <input type="text"> -->
+            <!-- <label for="file-footer" onclick="addFooter()" id="display-footer">+</label>
+                <input type="file" id="file-footer" style="display:none"> -->
         </div>
         
     </main>
+    <div id="ajusteCor">
+        <fieldset><legend>Ajuste De Cores do Rodapé</legend>
+            Cor de fundo
+            <input type="color" name="" id="corBgFooter"><br>
+            Cor das letras
+            <input type="color" name="" id="corLetFooter">
+        </fieldset>
+    </div>
     
     <div class="addBox">
         <div class="add" onclick="addBox(event)" data-id="0">+</div>
