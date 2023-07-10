@@ -73,22 +73,33 @@ function removeBox(event){
 function addEncarte(event){
     console.log(event.target);
     console.log('Valor acima é do event');
-    let v = document.getElementById('ajusteEncarte');
-    v.style.display = 'none';
+    let ajuste = document.getElementById('ajusteEncarte');
+    ajuste.style.display = 'none';
     let pos = event.target.dataset.id;
     let item1 = event.target.dataset.item1;
     let item2 = event.target.dataset.item2;
     let item3 = event.target.dataset.item3;
     console.log('item: '+item1);
     console.log('Posição: '+pos);
+
     if(pos == 0){
         let file = document.getElementById('file-encarte').files[0];
         let img = URL.createObjectURL(file);
         let view = document.querySelectorAll('div[data-id="0"]')[item1];
+
+        //Valor do encarte  
+        let valor = document.createElement('div');
+        valor.id="valorEnc";
+        view.appendChild(valor);
+        valor.style.backgroundImage = `url(${img})`; //Terminei aqui, editando
+        let preco = document.getElementById('valorPreco');
+        console.log('Valor do preço: '+preco.value)
+        valor.innerHTML = `<div>Preço: R$ ${preco.value}</div>`;
+
+        //Imagem do encarte 
         console.log('valor da view: '+view);
-        // view.style.backgroundImage = `url(${img})`;
-        view.innerHTML = `<div id="encarte-main"  class="view" style="background-image: url("${img}");">
-        </div>`;
+        view.style.backgroundImage = `url(${img})`;
+
         document.querySelectorAll('label[data-id="0"]')[item1].style.display='none';
         return
     }
@@ -98,6 +109,7 @@ function addEncarte(event){
         let view = document.querySelectorAll('div[data-id="1"]')[item2];
         console.log('valor da view: '+view);
         view.style.backgroundImage = `url(${img})`;
+        // view.innerHTML += `<div>Preço: R$ 10,00</div>`;
         document.querySelectorAll('label[data-id="1"]')[item2].style.display='none';
         return
     }
@@ -107,6 +119,7 @@ function addEncarte(event){
         let view = document.querySelectorAll('div[data-id="2"]')[item3];
         console.log('valor da view: '+view);
         view.style.backgroundImage = `url(${img})`;
+        // view.innerHTML = `<div>Preço: R$ 10,00</div>`;
         document.querySelectorAll('label[data-id="2"]')[item3].style.display='none';
         return
     }
@@ -137,7 +150,7 @@ function abrirAjuste(event){
     <label for="file-encarte">upload</label>
     <input type="file" id="file-encarte" display="block"><br><hr>
     Preço:
-    <input type="number" id="valor"><br>
+    <input type="number" id="valorPreco" require><br>
     <img src="" alt="Sem imagem por enquanto"/><br>
     <button onclick="addEncarte(event)" id="btn-enc" data-id="${a}" data-item${a+1}="${item}">ENVIAR</button>`;
     return
