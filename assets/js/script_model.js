@@ -16,35 +16,34 @@ document.getElementById('file-footer').addEventListener('change', function addFo
 });
 
 //ADICIONAR BOX DE ENCARTE EM LINHA
-let count = {'linha1':-1, 'linha2': -1,'linha3':-1};
+let count = {'linha1':0, 'linha2': 0,'linha3':0};
 // console.log(count);
 function addBox(event){
     let pos = event.target.dataset.id;
     if(pos == 0){
-        count["linha1"] += 1;
         console.log(count);
         // console.log('MOSTRA POSIÇÃO: '+pos);
         let container = document.querySelectorAll('#view-encarte')[pos];
         container.innerHTML +=
         `<div id="encarte-main"  class="view" data-item1=${count['linha1']} data-id="${pos}">
             <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item1=${count['linha1']}>+</label></div>`;
+            return count["linha1"] += 1;
     }
     if(pos == 1){
-        count["linha2"] += 1;
         console.log(count);
         let container = document.querySelectorAll('#view-encarte')[pos];
         container.innerHTML +=
         `<div id="encarte-main"  class="view" data-item2=${count['linha2']} data-id="${pos}">
             <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item2=${count['linha2']}>+</label></div>`;
+        return count["linha2"] += 1;
     }
     if(pos == 2){
-        count["linha3"] += 1;
         console.log(count);
         let container = document.querySelectorAll('#view-encarte')[pos];
         container.innerHTML +=
         `<div id="encarte-main"  class="view" data-item3=${count['linha3']} data-id="${pos}">
             <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item3=${count['linha3']}>+</label></div>`;
-        return
+        return count["linha3"] += 1;
     }
 };
 
@@ -55,18 +54,28 @@ function removeBox(event){
     let pos = event.target.dataset.id;
     console.log('MOSTRA POSIÇÃO: '+pos);
     let linha = document.querySelectorAll('.count-encarte')[pos];
-    let del = linha.querySelectorAll('.view')[0];
-    del.remove();
+    let del = linha.querySelectorAll('.view');
     if(pos == 0){
-        count["linha1"] -= 1;
+        if(count["linha1"] > 0){
+            count["linha1"] -= 1;
+            del[count["linha1"]].remove();
+            return 
+        }
     }
     if(pos == 1){
-        count["linha2"] -= 1;
+        if(count["linha2"] > 0){
+            count["linha2"] -= 1;
+            del[count["linha2"]].remove();
+            return 
+        }
     }
     if(pos == 2){
-        count["linha1"] -= 1;
+        if(count["linha3"] > 0){
+            count["linha3"] -= 1;
+            del[count["linha3"]].remove();
+            return 
+        }
     }
-    return
 };
 
 //ADICIONAR IMAGEM DO ENCARTE
@@ -79,6 +88,7 @@ function addEncarte(event){
     let item1 = event.target.dataset.item1;
     let item2 = event.target.dataset.item2;
     let item3 = event.target.dataset.item3;
+    let formP = document.getElementById('formProd').value;
     console.log('item: '+item1);
     console.log('Posição: '+pos);
     //VALOR
@@ -87,7 +97,7 @@ function addEncarte(event){
     let preco = document.getElementById('valorPreco').value;
     let precoConvert = parseFloat(preco);
     console.log(precoConvert);
-    valor.innerHTML += `<div> ${(precoConvert.toFixed(2)).replace('.', ',')} <h6>kg</h6> </div>`;
+    valor.innerHTML += `<div> ${(precoConvert.toFixed(2)).replace('.', ',')} <h6>${formP}</h6> </div>`;
     //adicionando bg do valor
     let bgValor = document.createElement('img');
     bgValor.src = 'assets/image/bgPrecoOk.png';
@@ -170,7 +180,7 @@ function abrirAjuste(event){
         item = parseInt(event.target.dataset.item3);
     }
     console.log('Veio até aqui');
-    console.log('item: '+typeof(item));
+    console.log('item: '+item);
     console.log('posição: '+a);
     let view = document.getElementById('ajusteEncarte');
     view.style.display = 'block';
@@ -183,9 +193,15 @@ function abrirAjuste(event){
         <h3>NOME DO PRODUTO</h3><br>
         <input type="text" id="descProduto" required><br>
     </div>
-    <div>
-        <h3>PREÇO</h3><br>
-        <input type="number" id="valorPreco" width="50" required>
+    <div class="formatoPreco">
+        <div>
+            <h3>PREÇO</h3><br>
+            <input type="number" id="valorPreco" required>
+        </div>
+        <div id="formPreco">
+            <h3>Unidade,Kg, Litros...</h3><br>
+            <input type="text" id="formProd" required>
+        </div>
     </div>
     <div>
         <button onclick="addEncarte(event)" id="btn-enc" data-id="${a}" data-item${a+1}="${item}">ENVIAR</button>
