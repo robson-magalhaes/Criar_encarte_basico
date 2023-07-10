@@ -8,43 +8,48 @@
 </head>
 <body>
     <div id="ajusteEncarte">
-        <!-- <h4>Tela de ajustes de encarte test1</h4>
-        <label for="file-encarte">upload</label>
-        <input type="file" id="file-encarte">
-        <input type="number" id="valor">
-        <img src="#" alt="Imagem do preço">
-        <button onclick="addEncarte(event)" id="btn-enc">ENVIAR</button> -->
     </div>
 
     <main>
         <div id="header-main">
             <label for="file-header" onclick="addHeader()" id="display-header">+</label>
-                <input type="file" id="file-header">
+                <input type="file" id="file-header" style="display:none">
         </div>
 
         <div class="container" id="container">
             <div id="view-encarte" class="count-encarte">
 
-                <!--MODELO DO ENCARTE-->
-                <!-- <div id="encarte-main" class="view" >
-                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="0">+</label>
-                        <input type="file" id="file-encarte">
+                <div id="encarte-main" class="view" data-item1="0" data-id="0">
+                    <label for="" onclick="abrirAjuste(event)" class="display-encarte" data-id="0" data-item1="0" style="display: none;">+</label>
+                    <div id="nomeProduto">Papel Hegienico</div>
+                    <div id="valorEnc">
+                        <div> 12,00 <h6>kg</h6> </div>
+                        <img src="assets/image/bgPrecoOk.png">
+                    </div>
+                    <img src="assets/image/Produtos/7.jpg">
                 </div>
-                
-                <div id="encarte-main" class="view">
-                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte" data-id="1">+</label>
-                        <input type="file" id="file-encarte">
+
+                <div id="encarte-main" class="view" data-item1="0" data-id="0">
+                    <label for="" onclick="abrirAjuste(event)" class="display-encarte" data-id="0" data-item1="0" style="display: none;">+</label>
+                    <div id="nomeProduto">Papel Hegienico</div>
+                    <div id="valorEnc">
+                        <div> 12,00 <h6>kg</h6> </div>
+                        <img src="assets/image/bgPrecoOk.png">
+                    </div>
+                    <img src="assets/image/Produtos/1.jpg">
                 </div>
-                <div id="encarte-main" class="view">
-                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="2">+</label>
-                        <input type="file" id="file-encarte">
+
+                <div id="encarte-main" class="view" data-item1="0" data-id="0">
+                    <label for="" onclick="abrirAjuste(event)" class="display-encarte" data-id="0" data-item1="0" style="display: none;">+</label>
+                    <div id="nomeProduto">Papel Hegienico</div>
+                    <div id="valorEnc">
+                        <div> 12,00 <h6>kg</h6> </div>
+                        <img src="assets/image/bgPrecoOk.png">
+                    </div>
+                    <img src="assets/image/Produtos/1.jpg">
                 </div>
-                <div id="encarte-main" class="view" style="background-image: url('https://www.rom7master.com/assets/imagens/logotype_r.jpeg');">
-                    <label for="file-encarte" onclick="addEncarte(event)" class="display-encarte"  data-id="3" style="display:none">+</label>
-                        <input type="file" id="file-encarte">
-                </div> -->
-                <!--FINAL MODELO DO ENCARTE-->
             </div>
+
             <div id="view-encarte" class="count-encarte">
             </div>
 
@@ -55,7 +60,7 @@
 
         <div id="footer-main">
             <label for="file-footer" onclick="addFooter()" id="display-footer">+</label>
-                <input type="file" id="file-footer">
+                <input type="file" id="file-footer" style="display:none">
         </div>
         
     </main>

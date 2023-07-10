@@ -1,7 +1,5 @@
 *{
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 body{
     background-color: black;
@@ -15,21 +13,14 @@ main{
     background-size: cover;
     margin: 10px;
     max-width: 780px;
-    /* min-width: 600px; */
-    width: 780px;
+    min-width: 600px;
     min-height: 800px;
     background-color: white;
-    min-height: 1000px;
+    min-height: 900px;
+    /* position: absolute; */
 }
-h6{
-    margin: 0;
-}
-/* input[type='file']{
+input[type='file']{
     display:none;
-} */
-input{
-    height: 40px;
-    font-size: 30px;
 }
 .display-encarte{
     display: block;
@@ -47,10 +38,6 @@ input{
     margin: 3px;
     border-radius: 8px;
 }
-#header-main>img{
-    height: 100%;
-    width: 100%;
-}
 #header-main>label{
     display: flex;
     align-items: center;
@@ -61,6 +48,7 @@ input{
     height: 100%;
     width: 100%;
     border-radius: 10px;
+    /* background-color: rgb(116, 138, 130); */
     background-image: linear-gradient(to top right, white, rgb(116, 138, 130));
     cursor: pointer;
     box-shadow: 1px 1px 10px 2px black;
@@ -68,6 +56,7 @@ input{
 }
 #header-main>label:hover{
     transition: 0.2s;
+    /* background-color: rgb(53, 53, 51); */
     background-image: linear-gradient(to top right, rgb(187, 177, 177), rgb(92, 101, 98));
 }
 .container{
@@ -77,71 +66,22 @@ input{
 #view-encarte{
     display: flex;
     flex-wrap: wrap;
-    min-height: 225px;
+    min-height: 200px;
 }
 #encarte-main{
     flex: 1;
     min-width: 200px;
-    max-height: 240px;
-    /* background-color: rgba(16, 16, 16, 0.219); */
+    background-color: rgba(16, 16, 16, 0.219);
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    /* background-image: url('../image/s.png'); */
-    background-size: cover;
-    background-position: center;
-    min-height: 200px;
-    border-radius: 3px;
-    margin: 3px;
-}
-#encarte-main>#nomeProduto{
-    position: absolute;
-    transform: translateX(-50px) translateY(18px);
-    width: 240px;
-    height: 50px;
-    text-align: center;
-    color: black;
-    /* padding-top: 20px; */
-    font-size: 22px;
-    line-height: 25px;
-    font-weight: bold;
-    /* background-color: blue; */
-}
-#encarte-main>img{
-    width: 100%;
-    height: 100%;
-    padding-bottom: 30px;
-}
-#valorEnc{
-    /* position: relative;
-    transform: translateY(20px) translateX(40px); */
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
-    /* mix-blend-mode: multiply; */
-}
-#valorEnc>img{
-    width: 170px;
-    z-index: 2;
-    margin-bottom: 30px;
-    margin-right: 0px;
-}
-#valorEnc>div{
-    /* display: flex; */
-    position: absolute;
-    z-index: 99;
-    color: black;
-    /* transform: translateY(5px) translateX(5px); */
-    width: 40px;
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 25px;
-    flex-wrap: wrap;
-    padding-bottom: 19px;
+    padding:5px;
+    background-size: cover;
+    background-position: center;
+    min-height: 200px;
+    margin: 3px;
+    border-radius: 8px;
 }
 #encarte-main>label{
     display: flex;
@@ -153,6 +93,7 @@ input{
     height: 100%;
     width: 100%;
     border-radius: 10px;
+    /* background-color: rgb(116, 138, 130); */
     background-image: linear-gradient(to top right, white, rgb(116, 138, 130));
     cursor: pointer;
     box-shadow: 1px 1px 10px 2px black;
@@ -160,6 +101,7 @@ input{
 }
 #encarte-main>label:hover{
     transition: 0.2s;
+    /* background-color: rgb(53, 53, 51); */
     background-image: linear-gradient(to top right, rgb(187, 177, 177), rgb(92, 101, 98));
 }
 #footer-main{
@@ -185,6 +127,7 @@ input{
     height: 100%;
     width: 100%;
     border-radius: 10px;
+    /* background-color: rgb(116, 138, 130); */
     background-image: linear-gradient(to top right, white, rgb(116, 138, 130));
     cursor: pointer;
     box-shadow: 1px 1px 10px 2px black;
@@ -192,6 +135,7 @@ input{
 }
 #footer-main>label:hover{
     transition: 0.2s;
+    /* background-color: rgb(53, 53, 51); */
     background-image: linear-gradient(to top right, rgb(187, 177, 177), rgb(92, 101, 98));
 }
 
@@ -215,7 +159,6 @@ button, .button, a.button, input[type="submit"], input[type="file"],input[type="
 button:hover{
     transition: 0.5s;
     background-color: rgb(120, 95, 48);
-    color: white;
 }
 .add{
     display: inline-block;
@@ -258,24 +201,18 @@ button:hover{
 }
 
 input#valor{
-    height: 30px;
-    width: 50px;
-    background-color: green;
+    
 }
 #ajusteEncarte{
     display: none;
     position: absolute;
     background-color: red;
     width: 500px;
-    height: 550px;
+    height: 500px;
     padding: 20px;
     text-align: center;
     border-radius: 5px;
     z-index: 9;
     float: 10px;
     transform: translateX(0px) translateY(250px);
-}
-#ajusteEncarte>div{
-    padding: 10px;
-    margin: 10px;
 }

@@ -3,7 +3,7 @@ document.getElementById('file-header').addEventListener('change', function addHe
     let file = document.getElementById('file-header').files[0];
     let view = document.getElementById('header-main');
     var img = URL.createObjectURL(file);
-    view.style.backgroundImage = `url(${img})`;
+    view.innerHTML = `<img src="${img}"/>`;
     document.getElementById('display-header').style.display='none';
 });
 //ADICIONAR O FOOTER
@@ -81,25 +81,37 @@ function addEncarte(event){
     let item3 = event.target.dataset.item3;
     console.log('item: '+item1);
     console.log('Posição: '+pos);
+    //VALOR
+    let valor = document.createElement('div');
+    valor.id="valorEnc";
+    let preco = document.getElementById('valorPreco').value;
+    let precoConvert = parseFloat(preco);
+    console.log(precoConvert);
+    valor.innerHTML += `<div> ${(precoConvert.toFixed(2)).replace('.', ',')} <h6>kg</h6> </div>`;
+    //adicionando bg do valor
+    let bgValor = document.createElement('img');
+    bgValor.src = 'assets/image/bgPrecoOk.png';
+    valor.appendChild(bgValor);
+    //Descrição do nome do produto
+    let nomeProduto = document.getElementById('descProduto').value;
+    let addNome = document.createElement('div');
+    addNome.id= 'nomeProduto';
 
     if(pos == 0){
         let file = document.getElementById('file-encarte').files[0];
         let img = URL.createObjectURL(file);
         let view = document.querySelectorAll('div[data-id="0"]')[item1];
-
-        //Valor do encarte  
-        let valor = document.createElement('div');
-        valor.id="valorEnc";
         view.appendChild(valor);
-        valor.style.backgroundImage = `url(${img})`; //Terminei aqui, editando
-        let preco = document.getElementById('valorPreco');
-        console.log('Valor do preço: '+preco.value)
-        valor.innerHTML = `<div>Preço: R$ ${preco.value}</div>`;
-
         //Imagem do encarte 
         console.log('valor da view: '+view);
-        view.style.backgroundImage = `url(${img})`;
-
+        view.appendChild(addNome);
+        addNome.innerHTML = nomeProduto;
+        let imgView = document.createElement('img');
+        imgView.src = `${img}`;
+        view.appendChild(imgView);
+        // view.innerHTML = '<img src="${img}"/>'
+        // view.style.backgroundImage = `url(${img})`;
+        //Removendo o label
         document.querySelectorAll('label[data-id="0"]')[item1].style.display='none';
         return
     }
@@ -107,9 +119,17 @@ function addEncarte(event){
         let file = document.getElementById('file-encarte').files[0];
         let img = URL.createObjectURL(file);
         let view = document.querySelectorAll('div[data-id="1"]')[item2];
+        view.appendChild(valor);
+        //Imagem do encarte 
         console.log('valor da view: '+view);
-        view.style.backgroundImage = `url(${img})`;
-        // view.innerHTML += `<div>Preço: R$ 10,00</div>`;
+        view.appendChild(addNome);
+        addNome.innerHTML = nomeProduto;
+        let imgView = document.createElement('img');
+        imgView.src = `${img}`;
+        view.appendChild(imgView);
+        // view.innerHTML = '<img src="${img}"/>'
+        // view.style.backgroundImage = `url(${img})`;
+        //Removendo o label
         document.querySelectorAll('label[data-id="1"]')[item2].style.display='none';
         return
     }
@@ -117,9 +137,17 @@ function addEncarte(event){
         let file = document.getElementById('file-encarte').files[0];
         let img = URL.createObjectURL(file);
         let view = document.querySelectorAll('div[data-id="2"]')[item3];
+        view.appendChild(valor);
+        //Imagem do encarte 
         console.log('valor da view: '+view);
-        view.style.backgroundImage = `url(${img})`;
-        // view.innerHTML = `<div>Preço: R$ 10,00</div>`;
+        view.appendChild(addNome);
+        addNome.innerHTML = nomeProduto;
+        let imgView = document.createElement('img');
+        imgView.src = `${img}`;
+        view.appendChild(imgView);
+        // view.innerHTML = '<img src="${img}"/>'
+        // view.style.backgroundImage = `url(${img})`;
+        //Removendo o label
         document.querySelectorAll('label[data-id="2"]')[item3].style.display='none';
         return
     }
@@ -146,12 +174,21 @@ function abrirAjuste(event){
     console.log('posição: '+a);
     let view = document.getElementById('ajusteEncarte');
     view.style.display = 'block';
-    view.innerHTML = `<h4>Tela de ajustes de encarte</h4>
-    <label for="file-encarte">upload</label>
-    <input type="file" id="file-encarte" display="block"><br><hr>
-    Preço:
-    <input type="number" id="valorPreco" require><br>
-    <img src="" alt="Sem imagem por enquanto"/><br>
-    <button onclick="addEncarte(event)" id="btn-enc" data-id="${a}" data-item${a+1}="${item}">ENVIAR</button>`;
+    view.innerHTML = `<h2>ADICIONAR ENCARTE</h2><br><hr><br>
+    <div>
+        <h3>ADICIONAR IMAGEM DO PRODUTO</h3>
+        <input type="file" id="file-encarte" display="block"><br>
+    </div>
+    <div>
+        <h3>NOME DO PRODUTO</h3><br>
+        <input type="text" id="descProduto" required><br>
+    </div>
+    <div>
+        <h3>PREÇO</h3><br>
+        <input type="number" id="valorPreco" width="50" required>
+    </div>
+    <div>
+        <button onclick="addEncarte(event)" id="btn-enc" data-id="${a}" data-item${a+1}="${item}">ENVIAR</button>
+    </div>`;
     return
 }
