@@ -355,11 +355,13 @@ input#valor{
     }
     body{
         max-width: 100px;
-        background-color: green;
-        transform: scale(0.34);
+        transform: scale(0.32);
     }
     main{
         transform: translateX(0px) translateY(-400px);
+    }
+    #ajusteEncarte{
+        transform: scale(3);
     }
     .addBox{
         transform: translateX(0px) translateY(-400px);
@@ -381,6 +383,7 @@ input#valor{
         justify-content: center;
     }
     #ajusteCor>fieldset{
+        transform: scale(1.1);
         width: 500px;
         padding: 10px;
         font-size: 30px;
