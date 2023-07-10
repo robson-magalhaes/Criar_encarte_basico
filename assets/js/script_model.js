@@ -3,7 +3,7 @@ document.getElementById('file-header').addEventListener('change', function addHe
     let file = document.getElementById('file-header').files[0];
     let view = document.getElementById('header-main');
     var img = URL.createObjectURL(file);
-    view.style.backgroundImage = `url(${img})`;
+    view.innerHTML = `<img src="${img}"/>`;
     document.getElementById('display-header').style.display='none';
 });
 //ADICIONAR O FOOTER
@@ -27,9 +27,7 @@ function addBox(event){
         let container = document.querySelectorAll('#view-encarte')[pos];
         container.innerHTML +=
         `<div id="encarte-main"  class="view" data-item1=${count['linha1']} data-id="${pos}">
-            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item1=${count['linha1']}>+</label>
-                `;
-        return
+            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item1=${count['linha1']}>+</label></div>`;
     }
     if(pos == 1){
         count["linha2"] += 1;
@@ -37,8 +35,7 @@ function addBox(event){
         let container = document.querySelectorAll('#view-encarte')[pos];
         container.innerHTML +=
         `<div id="encarte-main"  class="view" data-item2=${count['linha2']} data-id="${pos}">
-            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item2=${count['linha2']}>+</label>`;
-        return
+            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item2=${count['linha2']}>+</label></div>`;
     }
     if(pos == 2){
         count["linha3"] += 1;
@@ -46,7 +43,7 @@ function addBox(event){
         let container = document.querySelectorAll('#view-encarte')[pos];
         container.innerHTML +=
         `<div id="encarte-main"  class="view" data-item3=${count['linha3']} data-id="${pos}">
-            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item3=${count['linha3']}>+</label>`;
+            <label for="" onclick="abrirAjuste(event)" class="display-encarte"  data-id="${pos}" data-item3=${count['linha3']}>+</label></div>`;
         return
     }
 };
@@ -76,47 +73,81 @@ function removeBox(event){
 function addEncarte(event){
     console.log(event.target);
     console.log('Valor acima é do event');
-    let v = document.getElementById('ajusteEncarte');
-    v.style.display = 'none';
+    let ajuste = document.getElementById('ajusteEncarte');
+    ajuste.style.display = 'none';
     let pos = event.target.dataset.id;
     let item1 = event.target.dataset.item1;
     let item2 = event.target.dataset.item2;
     let item3 = event.target.dataset.item3;
     console.log('item: '+item1);
     console.log('Posição: '+pos);
+    //VALOR
+    let valor = document.createElement('div');
+    valor.id="valorEnc";
+    let preco = document.getElementById('valorPreco').value;
+    let precoConvert = parseFloat(preco);
+    console.log(precoConvert);
+    valor.innerHTML += `<div> ${(precoConvert.toFixed(2)).replace('.', ',')} <h6>kg</h6> </div>`;
+    //adicionando bg do valor
+    let bgValor = document.createElement('img');
+    bgValor.src = 'assets/image/bgPrecoOk.png';
+    valor.appendChild(bgValor);
+    //Descrição do nome do produto
+    let nomeProduto = document.getElementById('descProduto').value;
+    let addNome = document.createElement('div');
+    addNome.id= 'nomeProduto';
+
     if(pos == 0){
         let file = document.getElementById('file-encarte').files[0];
         let img = URL.createObjectURL(file);
-        // console.log(img);
-        // let view = document.querySelectorAll('.view')[item1];
         let view = document.querySelectorAll('div[data-id="0"]')[item1];
-        // let view = document.querySelectorAll('div[data-item1="'+item+'"]')[item1];
-        console.log(view);
-        view.style.backgroundImage = `url(${img})`;
+        view.appendChild(valor);
+        //Imagem do encarte 
+        console.log('valor da view: '+view);
+        view.appendChild(addNome);
+        addNome.innerHTML = nomeProduto;
+        let imgView = document.createElement('img');
+        imgView.src = `${img}`;
+        view.appendChild(imgView);
+        // view.innerHTML = '<img src="${img}"/>'
+        // view.style.backgroundImage = `url(${img})`;
+        //Removendo o label
         document.querySelectorAll('label[data-id="0"]')[item1].style.display='none';
         return
     }
     if(pos == 1){
         let file = document.getElementById('file-encarte').files[0];
         let img = URL.createObjectURL(file);
-        // console.log(img);
-        // let view = document.querySelectorAll('.view')[item2];
         let view = document.querySelectorAll('div[data-id="1"]')[item2];
-        // let view = document.querySelectorAll('div[data-item1="'+item+'"]')[item2];
-        console.log(view);
-        view.style.backgroundImage = `url(${img})`;
+        view.appendChild(valor);
+        //Imagem do encarte 
+        console.log('valor da view: '+view);
+        view.appendChild(addNome);
+        addNome.innerHTML = nomeProduto;
+        let imgView = document.createElement('img');
+        imgView.src = `${img}`;
+        view.appendChild(imgView);
+        // view.innerHTML = '<img src="${img}"/>'
+        // view.style.backgroundImage = `url(${img})`;
+        //Removendo o label
         document.querySelectorAll('label[data-id="1"]')[item2].style.display='none';
         return
     }
     if(pos == 2){
         let file = document.getElementById('file-encarte').files[0];
         let img = URL.createObjectURL(file);
-        // console.log(img);
-        // let view = document.querySelectorAll('.view')[item3];
         let view = document.querySelectorAll('div[data-id="2"]')[item3];
-        // let view = document.querySelectorAll('div[data-item1="'+item+'"]')[item3];
-        console.log(view);
-        view.style.backgroundImage = `url(${img})`;
+        view.appendChild(valor);
+        //Imagem do encarte 
+        console.log('valor da view: '+view);
+        view.appendChild(addNome);
+        addNome.innerHTML = nomeProduto;
+        let imgView = document.createElement('img');
+        imgView.src = `${img}`;
+        view.appendChild(imgView);
+        // view.innerHTML = '<img src="${img}"/>'
+        // view.style.backgroundImage = `url(${img})`;
+        //Removendo o label
         document.querySelectorAll('label[data-id="2"]')[item3].style.display='none';
         return
     }
@@ -124,31 +155,40 @@ function addEncarte(event){
 
 function abrirAjuste(event){
     console.log(event.target);
-    let a = event.target.dataset.id;
+    let item = '';
+    let a = parseInt(event.target.dataset.id);
     if(event.target.dataset.item1){
         console.log('if 1');
-        return item = event.target.dataset.item1;
+        item = parseInt(event.target.dataset.item1);
     }
     if(event.target.dataset.item2){
         console.log('if 2');
-        let item = event.target.dataset.item2;
-        return item;
+        item = parseInt(event.target.dataset.item2);
     }
     if(event.target.dataset.item3){
         console.log('if 3');
-        let item = event.target.dataset.item3;
-        return item;
+        item = parseInt(event.target.dataset.item3);
     }
-    // let item = event.target.dataset.item1;
-    console.log(a);
-    console.log(item);
+    console.log('Veio até aqui');
+    console.log('item: '+typeof(item));
+    console.log('posição: '+a);
     let view = document.getElementById('ajusteEncarte');
     view.style.display = 'block';
-    let v = document.getElementById('ajusteEncarte');
-    v.innerHTML = `<h4>Tela de ajustes de encarte test1</h4>
-    <label for="file-encarte">upload</label>
-    <input type="file" id="file-encarte">
-    <input type="number" id="valor">
-    <button onclick="addEncarte(event)" id="btn-enc" data-id="${a}" data-item1="${item}">ENVIAR</button>`;
+    view.innerHTML = `<h2>ADICIONAR ENCARTE</h2><br><hr><br>
+    <div>
+        <h3>ADICIONAR IMAGEM DO PRODUTO</h3>
+        <input type="file" id="file-encarte" display="block"><br>
+    </div>
+    <div>
+        <h3>NOME DO PRODUTO</h3><br>
+        <input type="text" id="descProduto" required><br>
+    </div>
+    <div>
+        <h3>PREÇO</h3><br>
+        <input type="number" id="valorPreco" width="50" required>
+    </div>
+    <div>
+        <button onclick="addEncarte(event)" id="btn-enc" data-id="${a}" data-item${a+1}="${item}">ENVIAR</button>
+    </div>`;
     return
 }
