@@ -26,6 +26,7 @@ main{
 }
 h6{
     margin: 0;
+    font-size: 18px;
 }
 input{
     height: 40px;
@@ -139,7 +140,7 @@ input{
     width: 40px;
     font-size: 40px;
     font-weight: bold;
-    line-height: 25px;
+    line-height: 30px;
     flex-wrap: wrap;
     padding-bottom: 19px;
 }
