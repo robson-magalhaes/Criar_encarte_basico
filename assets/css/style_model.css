@@ -349,25 +349,27 @@ input#valor{
 }
 
 @media(max-width:600px) {
-    #view-ecarte{
-        margin: 0;
-        display: flex;
+    html{
+        max-height: 100vh;
     }
     body{
-        max-width: 100px;
+        height: 100%;
         transform: scale(0.32);
     }
     main{
-        transform: translateX(0px) translateY(-400px);
+        position: fixed;
+        z-index: 77;
+        height: auto;
+        transform: translateX(0px) translateY(200px);
     }
     #ajusteEncarte{
         transform: scale(3);
     }
     .addBox{
-        transform: translateX(0px) translateY(-400px);
+        transform: translateX(0px) translateY(200px);
     }
     .removeBox{
-        transform: translateX(0px) translateY(-400px);
+        transform: translateX(0px) translateY(200px);
     }
     input[type="color"]{
         width: 100px;
@@ -375,7 +377,9 @@ input#valor{
         border-radius: 100%;
     }
     #ajusteCor{
-        transform: translateX(0px) translateY(-350px);
+        transform: translateX(0px) translateY(1500px);
+        position: fixed;
+        z-index: 77;
         display: flex;
         padding: 10px;
         font-size: 30px;
