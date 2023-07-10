@@ -226,6 +226,11 @@ input{
     background-color: black;
     color: white;
 }
+input[type="color"]{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
 #ajusteCor{
     display: flex;
     padding: 10px;
@@ -340,4 +345,45 @@ input#valor{
 #ajusteEncarte>div{
     padding: 10px;
     margin: 10px;
+}
+
+@media(max-width:600px) {
+    #view-ecarte{
+        margin: 0;
+        display: flex;
+    }
+    body{
+        max-width: 100px;
+        background-color: green;
+        transform: scale(0.34);
+    }
+    main{
+        transform: translateX(0px) translateY(-400px);
+    }
+    .addBox{
+        transform: translateX(0px) translateY(-400px);
+    }
+    .removeBox{
+        transform: translateX(0px) translateY(-400px);
+    }
+    input[type="color"]{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+    }
+    #ajusteCor{
+        transform: translateX(0px) translateY(-350px);
+        display: flex;
+        padding: 10px;
+        font-size: 30px;
+        align-items: center;
+        justify-content: center;
+    }
+    #ajusteCor>fieldset{
+        width: 500px;
+        padding: 10px;
+        font-size: 30px;
+        text-align: center;
+    }
+
 }
