@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    max-width: 100vw;
+    max-height: 100vh;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    /* padding: 0 200px 0 200px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    background-image: url('../image/bgEncarte1.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.container{
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
+    color: white;
+    /* background-color: rgba(0, 0, 0, 0.263); */
+    background-image: linear-gradient(to bottom, rgb(92, 88, 88), rgba(0, 0, 0, 0.263));
+    /* opacity: 50%; */
+    width: 1000px;
+}
+.desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+.desc>h1{
+    color: white;
+    border: solid 2px white;
+    font-size: 70px;
+    width: 600px;
+    text-shadow: 2px 2px black;
+}
+.desc>h2{
+    color: white;
+}
+#btn-redirect{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background-image: linear-gradient(to top left, white, green 50%);
+    box-shadow: 2px 2px 4px 1px black;
+    transition: 0.3s;
+    cursor: pointer;
+}
+#btn-redirect:hover{
+    transition: 0.3s;
+    transform: scale(1.1);
+    background-image: linear-gradient(to top left, white, green 85%);
+}

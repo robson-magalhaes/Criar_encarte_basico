@@ -12,6 +12,9 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('../image/bgEncarte2.jpg');
+    background-size: cover;
+    background-position: center;
 }
 main{
     background-position: center;
@@ -79,6 +82,7 @@ input{
     display: flex;
     flex-wrap: wrap;
     min-height: 245px;
+    background-color: white;
 }
 #encarte-main{
     flex: 1;
@@ -234,8 +238,6 @@ input[type="color"]{
 }
 #ajusteCor{
     display: flex;
-    padding: 10px;
-    font-size: 30px;
     align-items: center;
     justify-content: center;
 }
@@ -243,6 +245,8 @@ input[type="color"]{
     padding: 10px;
     font-size: 30px;
     text-align: center;
+    position: absolute;
+    transform: translateY(200px);
 }
 /*BOTAO*/
 
@@ -383,8 +387,7 @@ input#valor{
         border-radius: 100%;
     }
     #ajusteCor{
-        transform: translateX(0px) translateY(1650px);
-        position: fixed;
+        transform: translateY(300px);
         z-index: 77;
         display: flex;
         padding: 10px;
