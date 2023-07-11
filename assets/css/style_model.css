@@ -374,7 +374,7 @@ input#valor{
     section{
         z-index: 0;
         background-size: cover;
-        transform: scale(0.9) translateY(0px);
+        transform: scale(1.2) translateY(0px);
     }
     main{
         /* position: fixed; */
