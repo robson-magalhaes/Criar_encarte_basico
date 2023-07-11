@@ -12,7 +12,16 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('../image/bgEncarte2.jpg');
+    /* background-image: url('../image/bgEncarte4.jpg');
+    background-size: cover;
+    background-position: center; */
+}
+section{
+    position: fixed;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../image/bgEncarte4.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -26,6 +35,7 @@ main{
     min-height: 1010px;
     width: 950px;
     margin: 20px;
+    z-index: 999;
 }
 h6{
     margin: 0;
@@ -353,33 +363,36 @@ input#valor{
 }
 
 @media(max-width:600px) {
-    html{
+    /* html{
+        transition: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        /* max-height: 100vh; */
         margin: 0;
         padding: 0;
-    }
-    body{
-        height: 100%;
-        transform: scale(0.32);
+    } */
+    section{
+        z-index: 0;
+        /* background-size: cover;
+        transform: scale(0.9) translateY(0px); */
     }
     main{
-        position: fixed;
-        z-index: 77;
+        /* position: fixed; */
+        z-index: 9;
         height: auto;
-        transform: translateX(0px) translateY(250px);
+        transform: translateX(0px) translateY(-300px) scale(0.32);
     }
     #ajusteEncarte{
         z-index: 999;
-        transform: scale(3) translateX(0px) translateY(200px);
+        transform: translateX(0px) translateY(10px) scale(0.80);
     }
     .addBox{
-        transform: translateX(0px) translateY(250px);
+        z-index: 9;
+        transform: translateX(-20px) translateY(-145px) scale(0.33);
     }
     .removeBox{
-        transform: translateX(0px) translateY(250px);
+        z-index: 9;
+        transform: translateX(20px) translateY(-145px) scale(0.33);
     }
     input[type="color"]{
         width: 100px;
@@ -388,7 +401,7 @@ input#valor{
     }
     #ajusteCor{
         transform: translateY(300px);
-        z-index: 77;
+        z-index: 9;
         display: flex;
         padding: 10px;
         font-size: 30px;
@@ -401,6 +414,9 @@ input#valor{
         padding: 10px;
         font-size: 30px;
         text-align: center;
+    }
+    .addFooter{
+        transform: scale(1.7) translateX(200px) translateY(270px);
     }
 
 }
