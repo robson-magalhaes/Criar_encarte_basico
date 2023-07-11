@@ -73,15 +73,9 @@ main{
     transform: scale(1.1);
     background-image: linear-gradient(to top left, white, green 85%);
 }
+
 @media (max-width:600px){
     .container{
         transform: scale(0.55);
-    }
-    #btn-redirect{
-        transition: none;
-        transform: translateY(100px) scale(2.3);
-    }
-    #btn-redirect:hover{
-        transition: none;
     }
 }
