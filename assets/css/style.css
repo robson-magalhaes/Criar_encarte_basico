@@ -78,7 +78,4 @@ main{
     .container{
         transform: scale(0.55);
     }
-a{
-transform: translateY(100px) scale(2.3);}
-}
 }
