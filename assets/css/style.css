@@ -78,15 +78,7 @@ main{
     .container{
         transform: scale(0.55);
     }
-    #btn-redirect{
-        transition: none;
-        transform: translateY(100px) scale(2.3);
-    }
-    #btn-redirect:hover{
-        transition: none;
-    }
 a{
-
 transform: translateY(100px) scale(2.3);}
 }
 }
