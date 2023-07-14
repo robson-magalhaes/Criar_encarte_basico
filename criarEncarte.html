@@ -34,7 +34,7 @@
         </div> -->
     </div>
 
-    <!-- <button onclick="print()">SALVAR</button> -->
+    <button onclick="print()">SALVAR</button>
     <main>
         <div id="header-main">
             <label for="file-header" onclick="addHeader()" id="display-header">+</label>
@@ -110,6 +110,17 @@
         <div class="remove" onclick="removeBox(event)" data-id="2">x</div>
     </div>
     <script src="assets/js/script_model.js"></script>
-    
+
+    <script>
+        function print() {
+            html2canvas(document.querySelector("main")).then(canvas => {
+                const link = document.createElement("a");
+                link.download = "imagem.png";
+                const image = canvas.toDataURL("image/png");
+                link.href = image;
+                link.click();
+            });
+        }
+    </script>
 </body>
 </html>
