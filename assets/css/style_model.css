@@ -418,7 +418,7 @@ input#valor{
     .addFooter{
         transform: scale(1.7) translateX(200px) translateY(270px);
     }
-#btn-print{
+button>#btn-print{
 position:absolute;
 z-index:1;
 transform: scale(2);
