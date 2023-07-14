@@ -30,12 +30,12 @@ main{
     background-size: cover;
     margin: 10px;
     max-width: 950px;
-    min-height: 800px;
     background-color: white;
     min-height: 1010px;
     width: 950px;
     margin: 20px;
     z-index: 999;
+    height:auto;
 }
 h6{
     margin: 0;
