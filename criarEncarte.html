@@ -117,8 +117,8 @@
         function print() {
             html2canvas(document.querySelector("main")).then(canvas => {
                 const link = document.createElement("a");
-                link.download = "imagem.png";
-                const image = canvas.toDataURL("image/png");
+                link.download = "encarte.jpeg";
+                const image = canvas.toDataURL("image/jpeg");
                 link.href = image;
                 link.click();
             });
