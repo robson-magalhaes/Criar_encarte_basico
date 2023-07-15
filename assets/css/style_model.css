@@ -425,7 +425,7 @@ input#valor{
         text-align: center;
     }
     .addFooter{
-        transform: scale(1.7) translateX(400px) translateY(270px);
+        transform: scale(1.7) translateX(460px) translateY(270px);
     }
     button>#btn-print{
         position:absolute;
