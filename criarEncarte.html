@@ -89,32 +89,29 @@
             <textarea name="" id="footer-area-2" cols="30" rows="10"></textarea> -->
             <input type="text" id="footer-area-1">
             <input type="text" id="footer-area-2">
-
-            <div class="addFooter" onclick="ajusteCor()">OK</div>
         </div><br>
-<button id="btn-print" onclick="print()">SALVAR</button>
-
-        <div id="ajusteCor">
-            <fieldset><legend>Ajuste De Cores do Rodapé</legend>
-                <div id="footer-fundo-1">
-                    <legend>FUNDO 1</legend>
-                    <div>Cor de fundo</div>
-                    <input type="color" name="" id="corBgFooter1"><br>
-                    <div>Cor das letras</div>
-                    <input type="color" name="" id="corLetFooter1">
-                </div>
-                <div id="footer-fundo-2">
-                    <legend>FUNDO 2</legend>
-                    <div>Cor de fundo</div>
-                    <input type="color" name="" id="corBgFooter2"><br>
-                    <div>Cor das letras</div>
-                    <input type="color" name="" id="corLetFooter2">
-                </div>
-            </fieldset>
-        </div>
-        
     </main>
-    
+    <button id="btn-print" onclick="print()">DOWNLOAD</button>
+    <div id="ajusteCor">
+        <fieldset><legend>Ajuste De Cores do Rodapé</legend>
+            <div id="footer-fundo-1">
+                <legend>FUNDO 1</legend><br>
+                <input type="color" name="" id="corBgFooter1"><br>
+                <div>Cor de fundo</div>
+                <input type="color" name="" id="corLetFooter1">
+                <div>Cor das letras</div>
+            </div>
+            <div id="footer-fundo-2">
+                <legend>FUNDO 2</legend><br>
+                <input type="color" name="" id="corBgFooter2"><br>
+                <div>Cor de fundo</div>
+                <input type="color" name="" id="corLetFooter2">
+                <div>Cor das letras</div>
+            </div>
+        </fieldset>
+        <div class="addFooter" onclick="ajusteCor()">OK</div>
+    </div>
+
     <div class="addBox">
         <div class="add" onclick="addBox(event)" data-id="0">+</div>
         <div class="add" onclick="addBox(event)" data-id="1">+</div>
@@ -138,5 +135,18 @@
             });
         }
     </script>
+    <!-- <script>
+        $(document).ready(function(){
+            var element = $("main"); 
+    
+            $("#Gerador").on('click', function () {
+                html2canvas(element, {
+                onrendered: function (canvas) {
+                $("#IMGfinal").append(canvas);
+                    }
+                });
+            });
+        });
+    </script> -->
 </body>
 </html>
