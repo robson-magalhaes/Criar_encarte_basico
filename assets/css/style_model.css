@@ -404,6 +404,9 @@ input#valor{
         z-index: 9;
         transform: translateX(20px) translateY(-145px) scale(0.33);
     }
+#footer-main{
+margin-bottom:-18px;
+}
     input[type="color"]{
         width: 100px;
         height: 100px;
