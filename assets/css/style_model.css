@@ -405,7 +405,7 @@ input#valor{
         transform: translateX(20px) translateY(-145px) scale(0.33);
     }
 #footer-main{
-margin-bottom:-18px;
+margin-bottom:-36px;
 }
     input[type="color"]{
         width: 100px;
