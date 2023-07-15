@@ -209,6 +209,7 @@ input{
     /* padding: 0; */
     /* height: 130px; */
     /* border: solid 1px white; */
+background-color:white;
     display: flex;
     flex-direction: column;
 }
