@@ -431,7 +431,7 @@ input#valor{
     button>#btn-print{
         position:absolute;
         z-index:1;
-        transform: scale(2) translateX(200px);
+        transform: scale(2) translateX(-200px);
     }
 
 }
