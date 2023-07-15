@@ -389,7 +389,6 @@ input#valor{
     main{
         /* position: fixed; */
         z-index: 9;
-        height: auto;
         transform: translateX(0px) translateY(-300px) scale(0.32);
     }
     #ajusteEncarte{
