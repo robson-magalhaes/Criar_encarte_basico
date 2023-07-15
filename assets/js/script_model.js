@@ -15,14 +15,17 @@ document.getElementById('file-header').addEventListener('change', function addHe
 //     document.getElementById('display-footer').style.display='none';
 // });
 function ajusteCor(){
-    // let origin = document.getElementById('footer-main');
-    let area = document.getElementById('footerArea');
-    let corBg = document.getElementById('corBgFooter').value;
-    console.log('A cor é: '+corBg);
-    let corLet = document.getElementById('corLetFooter').value;
-    area.style.backgroundColor = `${corBg}`;
-    area.style.color = corLet;
-    // origin.innerHTML = area.value;
+    let area1 = document.getElementById('footer-area-1');
+    let corBg1 = document.getElementById('corBgFooter1').value;
+    let corLet1 = document.getElementById('corLetFooter1').value;
+    area1.style.backgroundColor = `${corBg1}`;
+    area1.style.color = corLet1;
+    
+    let area2 = document.getElementById('footer-area-2');
+    let corBg2 = document.getElementById('corBgFooter2').value;
+    let corLet2 = document.getElementById('corLetFooter2').value;
+    area2.style.backgroundColor = `${corBg2}`;
+    area2.style.color = corLet2;
 }
 
 //ADICIONAR BOX DE ENCARTE EM LINHA
