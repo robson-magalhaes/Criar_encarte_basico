@@ -14,24 +14,6 @@ document.getElementById('file-header').addEventListener('change', function addHe
 //     view.style.backgroundImage = `url(${img})`;
 //     document.getElementById('display-footer').style.display='none';
 // });
-function ajusteCor(){
-    let area1 = document.getElementById('footer-area-1');
-    let corBg1 = document.getElementById('corBgFooter1').value;
-    let corLet1 = document.getElementById('corLetFooter1').value;
-    area1.style.backgroundColor = `${corBg1}`;
-    area1.style.color = corLet1;
-    
-    let area2 = document.getElementById('footer-area-2');
-    let corBg2 = document.getElementById('corBgFooter2').value;
-    let corLet2 = document.getElementById('corLetFooter2').value;
-    area2.style.backgroundColor = `${corBg2}`;
-    area2.style.color = corLet2;
-
-    let font1 = document.getElementById('font1').value;
-    let font2 = document.getElementById('font2').value;
-    area1.style.fontSize = font1;
-    area2.style.fontSize = font2;
-}
 
 //ADICIONAR BOX DE ENCARTE EM LINHA
 let count = {'linha1':0, 'linha2': 0,'linha3':0};

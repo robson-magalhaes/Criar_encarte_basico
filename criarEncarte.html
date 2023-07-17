@@ -84,40 +84,57 @@
             
         </div>
 
-        <div id="footer-main">
-            <!-- <textarea name="" id="footer-area-1" cols="30" rows="10"></textarea>
-            <textarea name="" id="footer-area-2" cols="30" rows="10"></textarea> -->
+        <!-- <div id="footer-main0">
+            <div id="footer1"></div>
+            <div id="footer2"></div>
+        </div><br> -->
+
+        <!-- <div id="footer-main">
             <input placeholder="Digite aqui..." type="text" id="footer-area-1">
             <input placeholder="Digite aqui..."  type="text" id="footer-area-2">
+        </div><br> -->
+        <div id="footer-main">
+            <div id="footer-area-1"></div>
+            <div id="footer-area-2"></div>
         </div><br>
     </main>
+    <br>
+    
     <button id="btn-print" onclick="print()">DOWNLOAD</button>
+
+    <!-- PERSONALIZAR FOOTER -->
     <div id="ajusteCor">
-            <h5>PERSONALIZAR ENCARTE</h5><br>
+        <h3>PERSONALIZAR ENCARTE</h3>
+            
+        <div id="formFooter">
+            <input placeholder="Digite aqui..." type="text" id="footer1">
+            <input placeholder="Digite aqui..."  type="text" id="footer2">
+            <!-- <button onclick="aplicarFooter()">APLICAR</button> -->
+        </div>
             <div class="boxAjuste">
                 <div id="footer-fundo-1">
                     <h5>FUNDO 1</h5><br>
                     <div class="cores-ajust">
                         <label for="">Cor de fundo
-                        <input type="color" name="" id="corBgFooter1"></label>
+                        <input type="color" name="" id="corBgFooter1" value="#000000"></label>
                         <label for="">Cor das letras
-                        <input type="color" name="" id="corLetFooter1">
+                        <input type="color" name="" id="corLetFooter1" value="#FFFFFF">
                         </label>
                     </div>
                         <label for="">Fonte <br>
-                        <input type="number" style="width:60px" id="font1">
+                        <input type="number" style="width:60px" id="font1" placeholder="35">
                         </label>
                 </div>
                 <div id="footer-fundo-2">
                     <h5>FUNDO 2 </h5><br>
                     <div class="cores-ajust">
                         <label for="">Cor de fundo
-                        <input type="color" name="" id="corBgFooter2"></label>
+                        <input type="color" name="" id="corBgFooter2" value="#B7B7B7"></label>
                         <label for="">Cor das letras
-                        <input type="color" name="" id="corLetFooter2"></label>
+                        <input type="color" name="" id="corLetFooter2" value="#FFFFFF"></label>
                     </div>
                         <label for="">Fonte <br>
-                        <input type="number" style="width:60px" id="font2">
+                        <input type="number" style="width:60px" id="font2" placeholder="30">
                         </label>
                 </div>
             </div>
@@ -135,6 +152,7 @@
         <div class="remove" onclick="removeBox(event)" data-id="2">x</div>
     </div>
     <script src="assets/js/script_model.js"></script>
+    <script src="assets/js/footer.js"></script>
 
     <script>
         function print() {
