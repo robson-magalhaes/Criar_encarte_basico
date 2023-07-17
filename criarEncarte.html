@@ -93,22 +93,34 @@
     </main>
     <button id="btn-print" onclick="print()">DOWNLOAD</button>
     <div id="ajusteCor">
-        <fieldset><legend>Ajuste De Cores do Rodapé</legend>
-            <div id="footer-fundo-1">
-                <legend>FUNDO 1</legend><br>
-                <input type="color" name="" id="corBgFooter1"><br>
-                <div>Cor de fundo</div>
-                <input type="color" name="" id="corLetFooter1">
-                <div>Cor das letras</div>
+            <h5>PERSONALIZAR ENCARTE</h5><br>
+            <div class="boxAjuste">
+                <div id="footer-fundo-1">
+                    <h5>FUNDO 1</h5><br>
+                    <div class="cores-ajust">
+                        <label for="">Cor de fundo
+                        <input type="color" name="" id="corBgFooter1"></label>
+                        <label for="">Cor das letras
+                        <input type="color" name="" id="corLetFooter1">
+                        </label>
+                    </div>
+                        <label for="">Fonte <br>
+                        <input type="number" style="width:60px" id="font1">
+                        </label>
+                </div>
+                <div id="footer-fundo-2">
+                    <h5>FUNDO 2 </h5><br>
+                    <div class="cores-ajust">
+                        <label for="">Cor de fundo
+                        <input type="color" name="" id="corBgFooter2"></label>
+                        <label for="">Cor das letras
+                        <input type="color" name="" id="corLetFooter2"></label>
+                    </div>
+                        <label for="">Fonte <br>
+                        <input type="number" style="width:60px" id="font2">
+                        </label>
+                </div>
             </div>
-            <div id="footer-fundo-2">
-                <legend>FUNDO 2</legend><br>
-                <input type="color" name="" id="corBgFooter2"><br>
-                <div>Cor de fundo</div>
-                <input type="color" name="" id="corLetFooter2">
-                <div>Cor das letras</div>
-            </div>
-        </fieldset>
         <div class="addFooter" onclick="ajusteCor()">OK</div>
     </div>
 

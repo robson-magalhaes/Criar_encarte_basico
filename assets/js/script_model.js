@@ -26,6 +26,11 @@ function ajusteCor(){
     let corLet2 = document.getElementById('corLetFooter2').value;
     area2.style.backgroundColor = `${corBg2}`;
     area2.style.color = corLet2;
+
+    let font1 = document.getElementById('font1').value;
+    let font2 = document.getElementById('font2').value;
+    area1.style.fontSize = font1;
+    area2.style.fontSize = font2;
 }
 
 //ADICIONAR BOX DE ENCARTE EM LINHA
