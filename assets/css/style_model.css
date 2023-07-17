@@ -333,10 +333,22 @@ button:hover{
     background-color: rgb(120, 95, 48);
     color: white;
 }
+.btns{
+    display: flex;
+    width: 120%;
+    /* justify-content: space-between; */
+    justify-content: center;
+}
 #btn-print{
     color: white;
     font-size: 33px;
-    background-image: linear-gradient(to bottom right, orange 40%,white);
+    background-image: linear-gradient(to bottom right, green 40%,white);
+    box-shadow: 2px 2px 5px 1px black;
+}
+.btn-limpar{
+    color: white;
+    font-size: 25px;
+    background-image: linear-gradient(to bottom right, red 40%,white);
     box-shadow: 2px 2px 5px 1px black;
 }
 .addBox{
@@ -480,5 +492,6 @@ input#valor{
         z-index:1;
         transform: scale(0.4) translateY(-1720px) ;
     }
+
 
 }

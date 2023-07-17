@@ -36,7 +36,7 @@ document.addEventListener('change', function ajusteCor(){
     input2.style.color = corLet2;
     input1.style.fontSize = font1+'px';
     input2.style.fontSize = font2+'px';
-    corFundoView()
+    corFundoView();
 }
 );
 function corFundoView(){

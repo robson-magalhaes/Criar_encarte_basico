@@ -1,46 +1,62 @@
-// Função para obter o valor de um cookie existente
 function getCookie(name) {
-    var cookies = document.cookie.split("; ");
-    for (var i = 0; i < cookies.length; i++) {
-      var cookie = cookies[i].split("=");
-      if (cookie[0] === name) {
-        return cookie[1];
-      }
-    }
-    return null;
-  }
-  
-  // Função para salvar as informações no cookie
-  function salvarInformacoesNoCookie() {
-    // Obtenha as informações que deseja salvar
-    var informacoes = {
-      exemplo: "Valor de exemplo",
-      // Adicione aqui as informações que você deseja armazenar
-    };
-  
-    // Converta as informações para uma string JSON
-    var informacoesString = JSON.stringify(informacoes);
-  
-    // Defina o cookie com as informações
-    document.cookie = "informacoes=" + encodeURIComponent(informacoesString) + "; expires=DataDeExpiracao; path=/";
-  }
-  
-  // Função para restaurar as informações do cookie
-  function restaurarInformacoesDoCookie() {
-    // Obtenha o valor do cookie
-    var cookieValor = getCookie("informacoes");
-  
-    if (cookieValor) {
-      // Decode e parse o valor do cookie para obter as informações
-      var informacoesString = decodeURIComponent(cookieValor);
-      var informacoes = JSON.parse(informacoesString);
-  
-      // Use as informações restauradas para construir o site
-      // Exemplo: Alterar o conteúdo de um elemento no HTML
-      document.getElementById("exemploElemento").textContent = informacoes.exemplo;
+  var cookies = document.cookie.split("; ");
+  for (var i = 0; i < cookies.length; i++) {
+    var cookie = cookies[i].split("=");
+    if (cookie[0] === name) {
+      return cookie[1];
     }
   }
+  return null;
+}
+function salvarPaginaNoLocalStorage(cont) {
+  var informacoesPagina = {
+    titulo: document.title,
+    conteudo: document.body.innerHTML,
+    dadosJS: document.scripts,
+  };
+  localStorage.setItem("pagina", JSON.stringify(informacoesPagina));
+
+  var dados = localStorage.getItem("dados") || '{}';
+  var dadosObjeto = JSON.parse(dados);
+  dadosObjeto[cont] = valorVariavel;
+  localStorage.setItem("dados", JSON.stringify(dadosObjeto));
+}
+
+function restaurarPaginaDoLocalStorage() {
+  var informacoesString = localStorage.getItem("pagina");
+
+  if (informacoesString) {
+    var informacoesPagina = JSON.parse(informacoesString);
+
+    document.title = informacoesPagina.titulo;
+    document.body.innerHTML = informacoesPagina.conteudo;
+  }
+}
+document.addEventListener("change", function() {
+  salvarPaginaNoLocalStorage();
+});
+
+function delCookie() {
+alert('As alterações foram limpas');
+localStorage.clear();
+location.reload();
+}
+
+
+restaurarPaginaDoLocalStorage();
   
-  // Exemplo de uso
-  restaurarInformacoesDoCookie();
-  
+
+//PARECE QUE VAI DAR CERTO AQUI
+
+
+// function salvarVariavelNoLocalStorage(nomeVariavel, valorVariavel) {
+//   localStorage.setItem(nomeVariavel, JSON.stringify(valorVariavel));
+// }
+
+// // Exemplo de uso
+// var minhaVariavel = "Valor inicial da variável";
+// salvarVariavelNoLocalStorage("minhaVariavel", minhaVariavel);
+
+// // Mais tarde, quando a variável for alterada
+// minhaVariavel = "Novo valor da variável";
+// salvarVariavelNoLocalStorage("minhaVariavel", minhaVariavel);
