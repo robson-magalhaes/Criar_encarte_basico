@@ -8,17 +8,16 @@ function getCookie(name) {
   }
   return null;
 }
-function salvarPaginaNoLocalStorage(cont) {
+function salvarPaginaNoLocalStorage(count, valorVariavel) {
   var informacoesPagina = {
     titulo: document.title,
     conteudo: document.body.innerHTML,
-    dadosJS: document.scripts,
   };
   localStorage.setItem("pagina", JSON.stringify(informacoesPagina));
 
   var dados = localStorage.getItem("dados") || '{}';
   var dadosObjeto = JSON.parse(dados);
-  dadosObjeto[cont] = valorVariavel;
+  dadosObjeto[count] = valorVariavel;
   localStorage.setItem("dados", JSON.stringify(dadosObjeto));
 }
 
@@ -33,9 +32,14 @@ function restaurarPaginaDoLocalStorage() {
   }
 }
 
-//document.addEventListener("change", function() {
-//  salvarPaginaNoLocalStorage();
-//});
+var minhaVariavel = {'linha1':0, 'linha2': 0,'linha3':0};
+
+
+document.addEventListener("click", function() {
+  console.log('valor da variavel:'+ count['linha1']);
+  
+ salvarPaginaNoLocalStorage(count, valorVariavel);
+});
 
 function delCookie() {
 alert('As alterações foram limpas');
@@ -49,15 +53,11 @@ restaurarPaginaDoLocalStorage();
 
 //PARECE QUE VAI DAR CERTO AQUI
 
+// let count = {'linha1':0, 'linha2': 0,'linha3':0};
 
-// function salvarVariavelNoLocalStorage(nomeVariavel, valorVariavel) {
-//   localStorage.setItem(nomeVariavel, JSON.stringify(valorVariavel));
-// }
+function salvarVariavelNoLocalStorage(count, valorVariavel) {
+  localStorage.setItem(count, JSON.stringify(valorVariavel));
+  salvarVariavelNoLocalStorage(count);
+}
 
-// // Exemplo de uso
-// var minhaVariavel = "Valor inicial da variável";
-// salvarVariavelNoLocalStorage("minhaVariavel", minhaVariavel);
-
-// // Mais tarde, quando a variável for alterada
-// minhaVariavel = "Novo valor da variável";
-// salvarVariavelNoLocalStorage("minhaVariavel", minhaVariavel);
+// Exemplo de uso
