@@ -105,15 +105,20 @@
     <!-- PERSONALIZAR FOOTER -->
     <div id="ajusteCor">
         <h3>PERSONALIZAR ENCARTE</h3>
-            
+            <div id="box-corEncarte">
+                <h4>FUNDO ENCARTE</h4>
+                <input type="color" value="#FFFFFF">
+            </div>
         <div id="formFooter">
-            <input placeholder="Digite aqui..." type="text" id="footer1">
-            <input placeholder="Digite aqui..."  type="text" id="footer2">
+            <hr><br>
+            <h4>RODAPÉ</h4>
+            <input placeholder="Digite aqui..." type="text" id="footer1" oninput="ajusteCor()">
+            <input placeholder="Digite aqui..." type="text" id="footer2" oninput="ajusteCor()">
             <!-- <button onclick="aplicarFooter()">APLICAR</button> -->
         </div>
             <div class="boxAjuste">
                 <div id="footer-fundo-1">
-                    <h5>FUNDO 1</h5><br>
+                    <h4>FUNDO RODAPÉ - 1</h4><br>
                     <div class="cores-ajust">
                         <label for="">Cor de fundo
                         <input type="color" name="" id="corBgFooter1" value="#000000"></label>
@@ -126,7 +131,7 @@
                         </label>
                 </div>
                 <div id="footer-fundo-2">
-                    <h5>FUNDO 2 </h5><br>
+                    <h4>FUNDO RODAPÉ - 2 </h4><br>
                     <div class="cores-ajust">
                         <label for="">Cor de fundo
                         <input type="color" name="" id="corBgFooter2" value="#B7B7B7"></label>
@@ -138,7 +143,7 @@
                         </label>
                 </div>
             </div>
-        <div class="addFooter" onclick="ajusteCor()">OK</div>
+        <!-- <div class="addFooter" onclick="ajusteCor()">OK</div> -->
     </div>
 
     <div class="addBox">
@@ -147,12 +152,16 @@
         <div class="add" onclick="addBox(event)" data-id="2">+</div>
     </div>
     <div class="removeBox">
-        <div class="remove" onclick="removeBox(event)" data-id="0">x</div>
-        <div class="remove" onclick="removeBox(event)" data-id="1">x</div>
-        <div class="remove" onclick="removeBox(event)" data-id="2">x</div>
+        <div class="remove" >
+            <img src="assets/image/cruz2.png" alt="" onclick="removeBox(event)" data-id="0"></div>
+        <div class="remove"  >
+            <img src="assets/image/cruz2.png" alt="" onclick="removeBox(event)" data-id="1"></div>
+        <div class="remove" >
+            <img src="assets/image/cruz2.png" alt="" onclick="removeBox(event)" data-id="2"></div>
     </div>
     <script src="assets/js/script_model.js"></script>
-    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/ajustFooterView.js"></script>
+    <script src="assets/js/cookie.js"></script>
 
     <script>
         function print() {
