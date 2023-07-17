@@ -16,7 +16,9 @@ body{
     /* background-image: url('../image/bgEncarte0.jpg');
     background-size: auto;
     background-position: right; */
-    background-color: rgb(253, 212, 49);
+    /* background-color: rgb(253, 212, 49); */
+    background-color: rgb(35, 35, 34);
+    background-color: rgb(67, 65, 65);
 }
 /* section{
     position: fixed;
