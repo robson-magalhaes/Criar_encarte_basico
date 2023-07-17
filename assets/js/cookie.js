@@ -32,9 +32,10 @@ function restaurarPaginaDoLocalStorage() {
     document.body.innerHTML = informacoesPagina.conteudo;
   }
 }
-document.addEventListener("change", function() {
-  salvarPaginaNoLocalStorage();
-});
+
+//document.addEventListener("change", function() {
+//  salvarPaginaNoLocalStorage();
+//});
 
 function delCookie() {
 alert('As alterações foram limpas');
