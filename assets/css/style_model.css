@@ -434,10 +434,10 @@ input#valor{
         transform: translateX(-40px) translateY(-185px) scale(0.43);
     }
     #ajusteCor{
-        transform: scale(0.40) translateY(-1800px);
+        transform: scale(0.40) translateY(-2400px);
         z-index: 9;
         font-size: 30px;
-        width: 550px;
+        width: 780px;
     }
     #ajusteCor>fieldset{
         font-size: 30px;
@@ -445,8 +445,8 @@ input#valor{
         min-width: 100%;
     }
     .addFooter{
-        position: fixed;
-        transform: scale(1.4) translateX(240px) translateY(205px);
+        /* position: fixed; */
+        transform: scale(1.4) translateX(0px) translateY(100px);
     }
     #btn-print{
         z-index:1;
