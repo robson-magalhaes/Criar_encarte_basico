@@ -298,17 +298,15 @@ input[type="color"]{
     background-color: rgba(255, 255, 255, 0);
 }
 #footer1{
-    border: none;
     width: 100%;
     background-color: #000000;
-color:white;
+    color:white;
     font-size: 35px;
     font-weight: bold;
     height: 65px;
     padding: 0 10px 0 10px;
 }
 #footer2{
-    border: none;
     width: 100%;
     background-color: #B7B7B7;
 color:white;
