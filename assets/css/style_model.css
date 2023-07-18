@@ -159,7 +159,7 @@ input{
     padding-bottom: 19px;
 }
 #ajusteEncarte{
-    /* display: none; */
+    display: none;
     position: absolute;
     background-color: green;
     background-image: linear-gradient(to top right, rgb(49, 56, 49) , rgb(135, 135, 127) 20%, rgb(49, 56, 49) 40%);
