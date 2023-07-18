@@ -195,12 +195,12 @@ function abrirAjuste(event){
     </div>
     <div class="formatoPreco">
         <div>
-            <h3>PREÇO</h3><br>
-            <input type="number" id="valorPreco" required>
+            <label for=""><h3>PREÇO</h3><br>
+            <input type="number" id="valorPreco" required></label>
         </div>
         <div id="formPreco">
-            <h3>Unidade,Kg, Litros...</h3><br>
-            <input type="text" id="formProd" required>
+            <label for=""><h3>Unidade,Kg, Litros...</h3><br>
+            <input type="text" id="formProd" required></label>
         </div>
     </div>
     <div>
