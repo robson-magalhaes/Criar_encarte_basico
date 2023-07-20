@@ -475,7 +475,7 @@ input#valor{
 }
 @media(max-width:600px) {
     body{
-        transform: scale(1);
+        transform: translateX(30px);
         height: auto;
     }
     section{
@@ -489,7 +489,7 @@ input#valor{
     }
     main{
         z-index: 1;
-        transform: translateX(0px) translateY(-300px) scale(0.32);
+        transform: translateX(0px) translateY(-300px) scale(0.35);
     }
     #ajusteEncarte{
         z-index: 999;
@@ -498,15 +498,15 @@ input#valor{
     .addBox{
         position: fixed;
         z-index: 9;
-        transform: translateX(38px) translateY(-185px) scale(0.43);
+        transform: translateX(28px) translateY(-185px) scale(0.44);
     }
     .removeBox{
         position: fixed;
         z-index: 9;
-        transform: translateX(-40px) translateY(-185px) scale(0.43);
+        transform: translateX(-30px) translateY(-185px) scale(0.44);
     }
     #ajusteCor{
-        transform: scale(0.40) translateY(-2300px);
+        transform: scale(0.40) translateY(-2450px);
         z-index: 9;
         font-size: 30px;
         width: 780px;
