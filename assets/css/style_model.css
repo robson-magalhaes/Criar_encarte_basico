@@ -230,6 +230,7 @@ input{
     font-weight: bold;
     height: 65px;
     padding: 0 10px 0 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #footer-area-2{
     display: flex;
@@ -239,6 +240,7 @@ input{
     font-weight: bold;
     height: 65px;
     padding: 0 10px 0 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #ajusteCor{
     display: flex;
@@ -362,7 +364,7 @@ button, input[type="file"], #btn-enc{
 #btn-enc{
     padding: 10px;
 }
-button:hover, #btn-enc:hover,input[type="file"]:hover{
+button:hover, #btn-enc:hover,input[type="file"]:hover, #btn-print:hover{
     transition: 0.5s; background-image: linear-gradient(to top right, white, orange 50%);
     color: white;
     
@@ -375,7 +377,7 @@ button:hover{
 .btns{
     display: flex;
     width: 120%;
-    /* justify-content: space-between; */
+    /* justify-content: space-around; */
     justify-content: center;
 }
 #btn-print{
@@ -383,10 +385,12 @@ button:hover{
     font-size: 33px;
     background-image: linear-gradient(to bottom right, green 40%,white);
     box-shadow: 2px 2px 5px 1px black;
+    /* margin-right: 100px; */
 }
 .btn-limpar{
     color: white;
-    font-size: 25px;
+    font-size: 28px;
+    margin-bottom: 10px;
     background-image: linear-gradient(to bottom right, red 40%,white);
     box-shadow: 2px 2px 5px 1px black;
 }

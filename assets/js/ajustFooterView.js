@@ -23,7 +23,6 @@ document.addEventListener('change', function ajusteCor(){
     let font2 = document.querySelector('#font2').value;
     area1.style.fontSize = font1+'px';
     area2.style.fontSize = font2+'px';
-
     
     let input1 = document.getElementById('footer1');
     let input2 = document.getElementById('footer2');
@@ -37,7 +36,10 @@ document.addEventListener('change', function ajusteCor(){
     input1.style.fontSize = font1+'px';
     input2.style.fontSize = font2+'px';
     corFundoView();
-    
+
+    //SALVAMENTO DE COOKIE TIPO LOCALSTORAGE
+    salvarConteudoLocalStorage();
+    salvarInputs();
 }
 );
 function corFundoView(){
