@@ -39,8 +39,8 @@ main{
     min-height: 1010px;
     width: 950px;
     height:100%;
-    box-shadow: 5px 5px 200px 50px rgb(236, 203, 152);
-    border: solid 1px black;
+    box-shadow: 1px 1px 10px 2px rgb(105, 105, 39);
+    border: solid 3px black;
 }
 h6{
     margin: 0;
