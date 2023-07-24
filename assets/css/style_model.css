@@ -528,7 +528,7 @@ input#valor{
     }
     #ajusteEncarte{
         z-index: 999;
-        transform: translateX(0px) translateY(1510px) scale(0.80);
+        transform: translateX(0px) translateY(-510px) scale(0.80);
     }
     .addBox{
         position: fixed;
