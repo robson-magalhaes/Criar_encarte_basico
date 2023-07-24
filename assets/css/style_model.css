@@ -541,7 +541,7 @@ input#valor{
         transform: translateX(-30px) translateY(-885px) scale(0.44);
     }
     #ajusteCor{
-        transform: scale(0.40) translateY(-2450px);
+        transform: scale(0.40) translateY(-2050px);
         z-index: 9;
         font-size: 30px;
         width: 780px;
