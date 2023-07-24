@@ -11,9 +11,10 @@ body{
     flex-direction: column;
     align-items: center;
     position: relative;
-    background-image: url('../image/bgMercado.jpg');
+    /* background-image: url('../image/bgMercado.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center; */
+    background-color: rgba(255, 255, 0, 0.929);
 
     /* background-color: rgb(195, 121, 26);
     width: 100%;
@@ -162,7 +163,7 @@ input{
     padding-bottom: 19px;
 }
 #ajusteEncarte{
-    display: none;
+    /* display: none; */
     position: absolute;
     background-color: green;
     background-image: linear-gradient(to top right, rgb(49, 56, 49) , rgb(135, 135, 127) 20%, rgb(49, 56, 49) 40%);
@@ -173,9 +174,11 @@ input{
     border-radius: 5px;
     z-index: 999;
     float: 10px;
-    transform: translateX(0px) translateY(250px);
     box-shadow: inset 1px 1px 5px 2px rgb(171, 162, 162);
     padding: 20px;
+    /* transform: translateX(0px) translateY(250px) scale(0); */
+    /* transform: translateX(0px) translateY(2px) scale(0.01); */
+    transform: translateY(-4.6px) scale(0.007);
 }
 #ajusteEncarte>div{
     padding: 10px;
@@ -494,7 +497,9 @@ input#valor{
     }
     #ajusteEncarte{
         z-index: 999;
-        transform: translateX(0px) translateY(-755px) scale(0.80);
+        /* transform: translateX(0px) translateY(-5.1px) scale(0.005); */
+        /* transform:  scale(0.005); */
+        transition: 1s;
     }
     #ajusteCor{
         transform: scale(0.60) translateY(-1220px);
@@ -528,7 +533,8 @@ input#valor{
     }
     #ajusteEncarte{
         z-index: 999;
-        transform: translateX(0px) translateY(-710px) scale(0.80);
+        /* transform: translateX(0px) translateY(-710px) scale(0.80); */
+        transform: translateX(0.05px) translateY(-4.6px) scale(0.0065);
     }
     .addBox{
         position: fixed;

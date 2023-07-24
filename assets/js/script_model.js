@@ -83,7 +83,8 @@ function addEncarte(event){
     console.log(event.target);
     console.log('Valor acima é do event');
     let ajuste = document.getElementById('ajusteEncarte');
-    ajuste.style.display = 'none';
+    // ajuste.style.display = 'none';
+    ajuste.style.scale = 0.01;
     let pos = event.target.dataset.id;
     let item1 = event.target.dataset.item1;
     let item2 = event.target.dataset.item2;
@@ -183,7 +184,8 @@ function abrirAjuste(event){
     console.log('item: '+item);
     console.log('posição: '+a);
     let view = document.getElementById('ajusteEncarte');
-    view.style.display = 'block';
+    // view.style.display = 'block';
+    view.style.scale =  150;
     view.innerHTML = `<h2>ADICIONAR ENCARTE</h2><br><hr><br>
     <div>
         <h3>ADICIONAR IMAGEM DO PRODUTO</h3>
