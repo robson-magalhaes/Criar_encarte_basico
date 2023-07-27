@@ -165,27 +165,27 @@ input{
 #ajusteEncarte{
     /* display: none; */
     position: absolute;
-    background-color: green;
-    background-image: linear-gradient(to top right, rgb(49, 56, 49) , rgb(135, 135, 127) 20%, rgb(49, 56, 49) 40%);
+    background-image: linear-gradient(to top right, rgb(49, 56, 49) , rgba(135, 135, 127, 0.774) 20%, rgba(49, 56, 49, 0.851) 40%);
     width: 500px;
     height: 550px;
     padding: 20px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 2px;
     z-index: 999;
     float: 10px;
-    box-shadow: inset 1px 1px 5px 2px rgb(171, 162, 162);
+    box-shadow: inset 0 0 5px 1px rgb(6, 6, 6);
     padding: 20px;
     /* transform: translateX(0px) translateY(250px) scale(0); */
     /* transform: translateX(0px) translateY(2px) scale(0.01); */
-    transform: translateY(-4.6px) scale(0.007);
+    transform: translateY(-0.9px) scale(0.001);
 }
 #ajusteEncarte>div{
     padding: 10px;
     margin: 10px;
 }
 #ajusteEncarte>h2{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
     font-size: 30px;
 }
 .formatoPreco{
@@ -260,39 +260,42 @@ input{
     width: 950px;
     height: auto;
     max-width: 950px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 30px;
     color: black;
-    font-weight: bold;
-    border-radius: 10px;
+    font-weight: 900;
+    border-radius: 5px;
     padding: 25px 10px 10px 10px;
     background-color: rgba(240, 255, 255, 0.508);
     box-shadow: 0px 0px 10px 1px black;
 }
 #ajusteCor>h3{
-    text-decoration-line: underline;
     font-size: 45px;
-    letter-spacing: 10px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    color: white;
 }
 #box-corEncarte{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+    width: 100%;
 }
 #ajusteCor>.boxAjuste{
+    /* margin-top: 20px; */
     width: 100%;
     display: flex;
     justify-content: center;
 }
 #footer-fundo-1, #footer-fundo-2{
     margin: 30px 0px 30px 10px;
-    background-color: rgba(161, 164, 164, 0.508);
+    background-color: rgba(161, 164, 164, 0.058);
     color: black;
     padding: 10px;
     font-size: 20px;
     width: 50%;
+    border-right: solid 1px black;
 }
 .cores-ajust{
     display: flex;
@@ -357,6 +360,7 @@ button, input[type="file"], #btn-enc{
     border: none;
     border-radius: 3px;
     background-image: linear-gradient(to top right, white, orange 80%);
+    box-shadow: 1px 1px 5px 1px black;
     color: black;
     font-size: 18px;
     padding: 5px 10px 5px 10px;
@@ -467,7 +471,10 @@ input#valor{
     width: 50px;
     background-color: green;
 }
+html{
+    font-family: serif,sans-serif;
 
+}
 
 @media(max-width:1930px){
     html{
@@ -498,7 +505,7 @@ input#valor{
     #ajusteEncarte{
         z-index: 999;
         /* transform: translateX(0px) translateY(-5.1px) scale(0.005); */
-        /* transform:  scale(0.005); */
+        /* transform:  scale(0.01); */
         transition: 1s;
     }
     #ajusteCor{
@@ -534,7 +541,7 @@ input#valor{
     #ajusteEncarte{
         z-index: 999;
         /* transform: translateX(0px) translateY(-710px) scale(0.80); */
-        transform: translateX(0.05px) translateY(-4.6px) scale(0.0065);
+        transform: translateY(-0.85px) scale(0.001);
     }
     .addBox{
         position: fixed;
@@ -550,7 +557,7 @@ input#valor{
         transform: scale(0.40) translateY(-2450px);
         z-index: 9;
         font-size: 30px;
-        width: 780px;
+        width: 847px;
         height: auto;
     }
     .addFooter{

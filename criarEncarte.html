@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="assets/css/style_model.css">
     <script src="html2canvas.js"></script>
     <script src="html2canvas.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
     <title>Encarte</title>
 </head>
 <body>
-    <section>
-    </section>
     <div id="ajusteEncarte">
             <!-- <h2>ADICIONAR ENCARTE</h2><br><hr><br>
         <div>
@@ -107,12 +108,28 @@
     <div id="ajusteCor">
         <h3>PERSONALIZAR ENCARTE</h3>
             <div id="box-corEncarte">
-                <h4>FUNDO ENCARTE</h4>
-                <input type="color" value="#FFFFFF">
+                    <h4>Cor de fundo</h4>
+                    <input type="color" value="#FFFFFF">
+                    <!-- <label for="">
+                    <h4>Cor das letras</h4>
+                    <input type="color" value="#000"></label> -->
+                    
             </div>
+            <!-- <div id="footer-fundo-1">
+                <h4>FUNDO RODAPÉ - 1</h4><br>
+                <div class="cores-ajust">
+                    <label for="">Cor de fundo
+                    <input type="color" name="" id="corBgFooter1" value="#000000"></label>
+                    <label for="">Cor das letras
+                    <input type="color" name="" id="corLetFooter1" value="#FFFFFF">
+                    </label>
+                </div>
+                    <label for="">Fonte <br>
+                    <input type="number" style="width:60px" id="font1" placeholder="35">
+                    </label>
+            </div> -->
         <div id="formFooter">
-            <hr><br>
-            <h4>RODAPÉ</h4>
+            <hr><hr>
             <input placeholder="Digite aqui..." type="text" id="footer1" oninput="ajusteCor()">
             <input placeholder="Digite aqui..." type="text" id="footer2" oninput="ajusteCor()">
             <!-- <button onclick="aplicarFooter()">APLICAR</button> -->

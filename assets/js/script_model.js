@@ -185,19 +185,19 @@ function abrirAjuste(event){
     console.log('posição: '+a);
     let view = document.getElementById('ajusteEncarte');
     // view.style.display = 'block';
-    view.style.scale =  150;
-    view.innerHTML = `<h2>ADICIONAR ENCARTE</h2><br><hr><br>
+    view.style.scale =  850;
+    view.innerHTML = `<h2>Adicionar Encarte</h2><br><hr><br>
     <div>
-        <h3>ADICIONAR IMAGEM DO PRODUTO</h3>
+        <h3>Imagem do produto</h3>
         <input type="file" id="file-encarte" display="block"><br>
     </div>
     <div>
-        <h3>NOME DO PRODUTO</h3><br>
+        <h3>Nome do produto</h3><br>
         <input type="text" id="descProduto" required><br>
     </div>
     <div class="formatoPreco">
         <div>
-            <label for=""><h3>PREÇO</h3><br>
+            <label for=""><h3>Preço</h3><br>
             <input type="number" id="valorPreco" required></label>
         </div>
         <div id="formPreco">
