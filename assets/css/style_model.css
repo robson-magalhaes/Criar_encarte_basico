@@ -96,12 +96,14 @@ input{
     display: flex;
     flex-wrap: wrap;
     min-height: 245px;
+    min-height: 265px;
     background-color: white;
+    padding-bottom: 10px;
 }
 #encarte-main{
     flex: 1;
     min-width: 200px;
-    max-height: 240px;
+    max-height: 248px;
     /* background-color: rgba(16, 16, 16, 0.219); */
     cursor: pointer;
     display: flex;
@@ -117,8 +119,8 @@ input{
 }
 #encarte-main>#nomeProduto{
     position: absolute;
-    transform: translateX(-50px) translateY(18px);
-    width: 240px;
+    transform: translateX(-20px) translateY(18px);
+    width: 225px;
     height: 50px;
     text-align: center;
     color: black;

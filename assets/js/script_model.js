@@ -120,9 +120,6 @@ function addEncarte(event){
         let imgView = document.createElement('img');
         imgView.src = `${img}`;
         view.appendChild(imgView);
-        // view.innerHTML = '<img src="${img}"/>'
-        // view.style.backgroundImage = `url(${img})`;
-        //Removendo o label
         document.querySelectorAll('label[data-id="0"]')[item1].style.display='none';
         return
     }
@@ -138,9 +135,6 @@ function addEncarte(event){
         let imgView = document.createElement('img');
         imgView.src = `${img}`;
         view.appendChild(imgView);
-        // view.innerHTML = '<img src="${img}"/>'
-        // view.style.backgroundImage = `url(${img})`;
-        //Removendo o label
         document.querySelectorAll('label[data-id="1"]')[item2].style.display='none';
         return
     }
@@ -156,8 +150,6 @@ function addEncarte(event){
         let imgView = document.createElement('img');
         imgView.src = `${img}`;
         view.appendChild(imgView);
-        // view.innerHTML = '<img src="${img}"/>'
-        // view.style.backgroundImage = `url(${img})`;
         //Removendo o label
         document.querySelectorAll('label[data-id="2"]')[item3].style.display='none';
         return
